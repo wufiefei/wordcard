@@ -87,7 +87,7 @@ export default function Step3SelectSize({
             <p className="font-medium text-purple-700 mb-2">💡 打印提示</p>
             <ul className="space-y-1">
               <li>• PDF适合打印实体卡片</li>
-              <li>• 单张图片适合电子设备展示</li>
+              <li>• 多张图片适合电子设备展示</li>
               <li>• 建议使用300DPI打印获得最佳效果</li>
             </ul>
           </div>
@@ -233,7 +233,7 @@ export default function Step3SelectSize({
             onClick={onExportImages}
             className="w-full py-3 rounded-xl font-medium bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg transition-all"
           >
-            🖼️ 导出单张图片
+            🖼️ 导出多张图片
           </button>
         </div>
       </div>
@@ -256,7 +256,7 @@ export default function Step3SelectSize({
           onClick={onExportImages}
           className="w-full py-3 rounded-xl font-medium bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl transition-all"
         >
-          🖼️ 导出单张图片
+          🖼️ 导出多张图片
         </button>
       </div>
     </div>

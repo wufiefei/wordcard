@@ -2,7 +2,7 @@
 
 > 用宝宝的照片生成个性化英语学习闪卡，让学习更有趣！
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-15.5.5-black.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38bdf8.svg)
@@ -10,6 +10,7 @@
 ## ✨ 特点
 
 - 🎯 **个性化学习** - 用宝宝照片制作专属闪卡
+- 🤖 **智能抠图** - 专业级AI背景移除 + 手动编辑（新！）
 - 📚 **科学词库** - 动物、水果、颜色等主题分类
 - 🎨 **自然拼读** - 7种颜色标注不同发音规则
 - 📐 **多种尺寸** - 6种卡片尺寸适应不同场景
@@ -41,25 +42,31 @@ npm run dev
 - 🏗️ [**项目说明**](PROJECT_README.md) - 技术架构和项目结构
 - 🚀 [**开发计划**](DEVELOPMENT_PLAN.md) - 功能路线图和技术方案
 - 📊 [**项目总结**](PROJECT_SUMMARY.md) - 完成情况和成果总结
+- 🎨 [**图片编辑器指南**](UPDATE_v2.2_IMAGE_EDITOR.md) - 抠图与编辑功能（最新！）
 
 ## 🎯 核心功能
 
-### ✅ 已实现（Phase 1）
+### ✅ 已实现（Phase 1 & 2）
 
+- [x] **智能照片处理**（V2.2升级）
+  - [x] 专业级AI背景移除
+  - [x] 自动智能抠图
+  - [x] 完整图片编辑器（擦除、还原、旋转）
+  - [x] 可调节笔刷工具
+  - [x] 撤销/重做功能
 - [x] 照片上传（拖拽/点击）
-- [x] 3个单词库（51个单词）
+- [x] 6个单词库（120+个单词）
 - [x] 自然拼读颜色标注
 - [x] 6种卡片尺寸选择
 - [x] 单词选择和预览
 - [x] 响应式UI设计
 
-### 🔄 开发中（Phase 2）
+### 🚧 待实现（Phase 3）
 
-- [ ] 智能人脸检测和抠图
+- [ ] 照片手动编辑（旋转、裁剪）
 - [ ] Canvas卡片渲染
 - [ ] PDF导出功能
 - [ ] 图片批量下载
-- [ ] 排版预览
 
 ## 🎨 界面预览
 
@@ -108,6 +115,7 @@ npm run dev
 - **框架**: [Next.js 15](https://nextjs.org/) (App Router)
 - **语言**: [TypeScript](https://www.typescriptlang.org/)
 - **样式**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **AI抠图**: [@imgly/background-removal](https://github.com/imgly/background-removal-js)
 - **包管理**: npm
 
 ## 📁 项目结构
@@ -118,8 +126,12 @@ wordcard/
 │   ├── app/              # Next.js应用
 │   ├── components/       # React组件
 │   ├── data/            # 单词库数据
-│   └── types/           # TypeScript类型
-├── public/              # 静态资源
+│   ├── types/           # TypeScript类型
+│   └── utils/           # 工具函数（人脸检测、抠图等）
+├── public/
+│   ├── models/          # AI模型文件
+│   └── ...              # 其他静态资源
+├── scripts/             # 工具脚本（模型下载等）
 └── docs/               # 文档（各种.md文件）
 ```
 
@@ -158,6 +170,32 @@ vercel
 ## 🤝 贡献
 
 欢迎提出问题和建议！
+
+## 📝 更新日志
+
+### v2.2.0 (2025-10-15) 🎨
+- 🎨 新增完整的图片编辑器
+- 🔄 更换为专业级抠图方案
+- 🗑️ 移除face-api.js（效果不佳）
+- 💡 简化用户界面和操作
+- ✨ 大幅提升抠图成功率（70%→95%）
+- 🖌️ 支持擦除、还原、旋转、撤销/重做
+
+### v2.1.0 (2025-10-15) ~~已废弃~~
+- ~~AI人脸检测功能~~（效果不理想，已移除）
+
+### v2.0.0 (2025-10-14) 🔄
+- 🔄 重构为3步骤向导界面
+- ✨ 优化移动端按钮固定
+- ✨ 新增拖动头像调整位置
+- ✨ 新增A4预览缩放功能
+- 📚 新增3个单词库
+
+### v1.0.0 (2025-10-13) 🎉
+- 🎉 初始版本发布
+- ✅ 基础UI和交互完成
+- ✅ 单词库数据结构设计
+- ✅ 移动端适配完成
 
 ## 📄 许可
 

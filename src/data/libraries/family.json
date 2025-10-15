@@ -1,34 +1,23 @@
 {
-  "id": "family",
-  "name": "家庭关系",
+  "id": "TPR—L0",
+  "name": "动作指令（初级，适合1.5岁宝宝）",
   "icon": "👨‍👩‍👧‍👦",
-  "count": 15,
+  "count": 20,
   "words": [
     {
-      "id": "family",
-      "english": "family",
-      "chinese": "家庭",
-      "phoneticSegments": [
-        { "text": "f", "category": "consonant" },
-        { "text": "a", "category": "short-vowel" },
-        { "text": "m", "category": "consonant" },
-        { "text": "i", "category": "short-vowel" },
-        { "text": "ly", "category": "consonant" }
-      ],
-      "cardImageUrl": "/cards/family/family.jpg",
+      "id": "Clap-your-hands",
+      "english": "Clap your hands",
+      "chinese": "拍拍手",
+      "phoneticSegments": [{"text":"c","category":"consonant"},{"text":"l","category":"consonant"},{"text":"a","category":"short-vowel"},{"text":"p","category":"consonant"},{"text":"y","category":"consonant"},{"text":"o","category":"short-vowel"},{"text":"u","category":"short-vowel"},{"text":"r","category":"consonant"},{"text":"h","category":"consonant"},{"text":"a","category":"short-vowel"},{"text":"n","category":"consonant"},{"text":"d","category":"consonant"}],
+      "cardImageUrl": "/cards/family/Clap-your-hands.jpg",
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
-      "id": "father",
-      "english": "father",
-      "chinese": "爸爸",
-      "phoneticSegments": [
-        { "text": "f", "category": "consonant" },
-        { "text": "a", "category": "long-vowel" },
-        { "text": "th", "category": "digraph" },
-        { "text": "er", "category": "r-controlled" }
-      ],
-      "cardImageUrl": "/cards/family/father.jpg",
+      "id": "Touch-your-nose",
+      "english": "Touch your nose",
+      "chinese": "摸摸鼻子",
+      "phoneticSegments": [{"text":"t","category":"consonant"},{"text":"o","category":"short-vowel"},{"text":"u","category":"short-vowel"},{"text":"c","category":"consonant"},{"text":"h","category":"consonant"},{"text":"y","category":"consonant"},{"text":"o","category":"short-vowel"},{"text":"u","category":"short-vowel"},{"text":"r","category":"consonant"},{"text":"n","category":"consonant"},{"text":"o","category":"long-vowel"},{"text":"s","category":"consonant"},{"text":"e","category":"silent"}],
+      "cardImageUrl": "/cards/family/Touch-your-nose.jpg",
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {

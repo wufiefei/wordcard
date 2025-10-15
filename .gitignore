@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# face-api.js models (large files, download separately)
+/public/models/*.json
+/public/models/*-shard*

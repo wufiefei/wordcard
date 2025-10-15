@@ -178,6 +178,27 @@ export default function DraggableCardPreview({
               )}
             </div>
           )}
+          
+          {/* 底部按钮 */}
+          <div className="mt-4 flex gap-2">
+            <button
+              onClick={onClose}
+              className="flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+            >
+              取消
+            </button>
+            <button
+              onClick={() => {
+                if (onPositionChange) {
+                  onPositionChange(position.x, position.y);
+                }
+                onClose();
+              }}
+              className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all font-medium shadow-lg"
+            >
+              保存位置
+            </button>
+          </div>
         </div>
       </div>
     </div>
