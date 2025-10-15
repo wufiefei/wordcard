@@ -13,6 +13,8 @@ export default function Home() {
   const [selectedLibraryId, setSelectedLibraryId] = useState<string | null>(null);
   const [selectedCardSize, setSelectedCardSize] = useState<string>('standard');
   const [selectedWords, setSelectedWords] = useState<Set<string>>(new Set());
+  // 保存每个单词的自定义位置
+  const [wordPositions, setWordPositions] = useState<Record<string, { x: number; y: number }>>({});
 
   const handlePhotoUpload = (_file: File, previewUrl: string) => {
     setPhotoPreview(previewUrl);
@@ -42,6 +44,13 @@ export default function Home() {
     } else {
       setSelectedWords(new Set(currentLibrary.words.map(w => w.id)));
     }
+  };
+
+  const handleUpdateWordPosition = (wordId: string, x: number, y: number) => {
+    setWordPositions(prev => ({
+      ...prev,
+      [wordId]: { x, y }
+    }));
   };
 
   const handleExportPDF = () => {
@@ -90,9 +99,11 @@ export default function Home() {
               selectedLibraryId={selectedLibraryId}
               selectedWords={selectedWords}
               photoPreview={photoPreview}
+              wordPositions={wordPositions}
               onSelectLibrary={handleSelectLibrary}
               onToggleWord={handleToggleWord}
               onToggleAll={handleToggleAll}
+              onUpdateWordPosition={handleUpdateWordPosition}
               onNext={() => setCurrentStep(3)}
               onBack={() => setCurrentStep(1)}
             />

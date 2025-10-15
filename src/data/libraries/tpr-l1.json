@@ -1,0 +1,169 @@
+{
+  "id": "TPR-L1",
+  "name": "动作指令（中级，适合1.5-3岁）",
+  "icon": "🎯",
+  "count": 20,
+  "words": [
+    {
+      "id": "Walk-like-a-penguin",
+      "english": "Walk like a penguin",
+      "chinese": "像企鹅一样走路",
+      "phoneticSegments": [{"text":"w","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Walk-like-a-penguin.jpg",
+      "facePosition": { "x": 30, "y": 20, "width": 40 }
+    },
+    {
+      "id": "Hop-like-a-bunny",
+      "english": "Hop like a bunny",
+      "chinese": "像兔子一样跳",
+      "phoneticSegments": [{"text":"h","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Hop-like-a-bunny.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Fly-like-a-bird",
+      "english": "Fly like a bird",
+      "chinese": "像小鸟一样飞",
+      "phoneticSegments": [{"text":"f","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Fly-like-a-bird.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Crawl-like-a-baby",
+      "english": "Crawl like a baby",
+      "chinese": "像小宝宝一样爬",
+      "phoneticSegments": [{"text":"c","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Crawl-like-a-baby.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Roar-like-a-lion",
+      "english": "Roar like a lion",
+      "chinese": "像狮子一样吼叫",
+      "phoneticSegments": [{"text":"r","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Roar-like-a-lion.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Tiptoe-quietly",
+      "english": "Tiptoe quietly",
+      "chinese": "踮起脚尖轻轻走",
+      "phoneticSegments": [{"text":"t","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Tiptoe-quietly.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "March-around",
+      "english": "March around",
+      "chinese": "踏步走一圈",
+      "phoneticSegments": [{"text":"m","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/March-around.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Spin-in-a-circle",
+      "english": "Spin in a circle",
+      "chinese": "转圈圈",
+      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Spin-in-a-circle.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Reach-for-the-stars",
+      "english": "Reach for the stars",
+      "chinese": "伸手摘星星",
+      "phoneticSegments": [{"text":"r","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Reach-for-the-stars.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Squat-down-low",
+      "english": "Squat down low",
+      "chinese": "蹲得低低的",
+      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Squat-down-low.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Balance-on-one-foot",
+      "english": "Balance on one foot",
+      "chinese": "单脚站立",
+      "phoneticSegments": [{"text":"b","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Balance-on-one-foot.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Wiggle-like-a-worm",
+      "english": "Wiggle like a worm",
+      "chinese": "像虫子一样扭动",
+      "phoneticSegments": [{"text":"w","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Wiggle-like-a-worm.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Stretch-up-high",
+      "english": "Stretch up high",
+      "chinese": "伸展得高高的",
+      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Stretch-up-high.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Roll-on-the-floor",
+      "english": "Roll on the floor",
+      "chinese": "在地上打滚",
+      "phoneticSegments": [{"text":"r","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Roll-on-the-floor.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Clap-above-your-head",
+      "english": "Clap above your head",
+      "chinese": "在头顶上方拍手",
+      "phoneticSegments": [{"text":"c","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Clap-above-your-head.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Touch-your-knees",
+      "english": "Touch your knees",
+      "chinese": "摸摸膝盖",
+      "phoneticSegments": [{"text":"t","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Touch-your-knees.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Make-yourself-small",
+      "english": "Make yourself small",
+      "chinese": "让自己变小",
+      "phoneticSegments": [{"text":"m","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Make-yourself-small.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Make-yourself-tall",
+      "english": "Make yourself tall",
+      "chinese": "让自己变高",
+      "phoneticSegments": [{"text":"m","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Make-yourself-tall.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Freeze-like-a-statue",
+      "english": "Freeze like a statue",
+      "chinese": "像雕像一样定住",
+      "phoneticSegments": [{"text":"f","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Freeze-like-a-statue.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    },
+    {
+      "id": "Dance-and-move",
+      "english": "Dance and move",
+      "chinese": "跳舞动起来",
+      "phoneticSegments": [{"text":"d","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l1/Dance-and-move.jpg",
+      "facePosition": { "x": 35, "y": 25, "width": 35 }
+    }
+  ]
+}
+

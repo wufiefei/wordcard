@@ -1,6 +1,6 @@
 'use client';
 
-import { WordLibrary, Word, PhoneticCategory } from '@/types/wordcard';
+import { WordLibrary, Word } from '@/types/wordcard';
 import { useState } from 'react';
 import Image from 'next/image';
 import DraggableCardPreview from './DraggableCardPreview';
@@ -10,31 +10,25 @@ interface Step2SelectWordsProps {
   selectedLibraryId: string | null;
   selectedWords: Set<string>;
   photoPreview: string | null;
+  wordPositions: Record<string, { x: number; y: number }>;
   onSelectLibrary: (libraryId: string) => void;
   onToggleWord: (wordId: string) => void;
   onToggleAll: () => void;
+  onUpdateWordPosition: (wordId: string, x: number, y: number) => void;
   onNext: () => void;
   onBack: () => void;
 }
-
-const phoneticColors: Record<PhoneticCategory, string> = {
-  'short-vowel': 'text-red-600',
-  'long-vowel': 'text-blue-600',
-  'consonant': 'text-black',
-  'digraph': 'text-orange-600',
-  'silent': 'text-gray-400',
-  'r-controlled': 'text-purple-600',
-  'diphthong': 'text-pink-600',
-};
 
 export default function Step2SelectWords({
   libraries,
   selectedLibraryId,
   selectedWords,
   photoPreview,
+  wordPositions,
   onSelectLibrary,
   onToggleWord,
   onToggleAll,
+  onUpdateWordPosition,
   onNext,
   onBack,
 }: Step2SelectWordsProps) {
@@ -157,27 +151,35 @@ export default function Step2SelectWords({
                         className="aspect-square bg-gradient-to-br from-yellow-100 to-pink-100 flex items-center justify-center relative"
                       >
                         <div className="text-4xl">🎨</div>
-                        {/* 小头像示意 */}
-                        {photoPreview && (
-                          <div className="absolute top-2 right-2 w-8 h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                            <Image
-                              src={photoPreview}
-                              alt="宝宝"
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                        )}
+                        {/* 小头像示意 - 使用原始尺寸 */}
+                        {photoPreview && (() => {
+                          const position = wordPositions[word.id] || { x: word.facePosition.x, y: word.facePosition.y };
+                          return (
+                            <div 
+                              className="absolute overflow-hidden"
+                              style={{
+                                left: `${position.x}%`,
+                                top: `${position.y}%`,
+                                width: `${word.facePosition.width}%`,
+                                aspectRatio: '1',
+                                transform: 'translate(-50%, -50%)',
+                              }}
+                            >
+                              <Image
+                                src={photoPreview}
+                                alt="宝宝"
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
+                          );
+                        })()}
                       </div>
 
                       {/* 单词信息 */}
                       <div className="p-2">
                         <div className="font-bold text-center text-sm mb-1">
-                          {word.phoneticSegments.map((seg, idx) => (
-                            <span key={idx} className={phoneticColors[seg.category]}>
-                              {seg.text}
-                            </span>
-                          ))}
+                          {word.english}
                         </div>
                         <div className="text-xs text-gray-600 text-center">
                           {word.chinese}
@@ -246,10 +248,10 @@ export default function Step2SelectWords({
         <DraggableCardPreview
           word={previewWord}
           photoPreview={photoPreview}
+          currentPosition={wordPositions[previewWord.id]}
           onClose={() => setPreviewWord(null)}
           onPositionChange={(x, y) => {
-            console.log('新位置:', { x, y });
-            // 这里可以保存新位置，后续用于生成最终卡片
+            onUpdateWordPosition(previewWord.id, x, y);
           }}
         />
       )}

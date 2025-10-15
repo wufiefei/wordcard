@@ -1,35 +1,27 @@
 'use client';
 
-import { Word, PhoneticCategory } from '@/types/wordcard';
+import { Word } from '@/types/wordcard';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
 
 interface DraggableCardPreviewProps {
   word: Word;
   photoPreview: string | null;
+  currentPosition?: { x: number; y: number };
   onClose: () => void;
   onPositionChange?: (x: number, y: number) => void;
 }
 
-const phoneticColors: Record<PhoneticCategory, string> = {
-  'short-vowel': 'text-red-600',
-  'long-vowel': 'text-blue-600',
-  'consonant': 'text-black',
-  'digraph': 'text-orange-600',
-  'silent': 'text-gray-400',
-  'r-controlled': 'text-purple-600',
-  'diphthong': 'text-pink-600',
-};
-
 export default function DraggableCardPreview({
   word,
   photoPreview,
+  currentPosition,
   onClose,
   onPositionChange,
 }: DraggableCardPreviewProps) {
   const [position, setPosition] = useState({
-    x: word.facePosition.x,
-    y: word.facePosition.y,
+    x: currentPosition?.x ?? word.facePosition.x,
+    y: currentPosition?.y ?? word.facePosition.y,
   });
   const [isDragging, setIsDragging] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -122,10 +114,10 @@ export default function DraggableCardPreview({
               <div className="text-6xl">🎨</div>
             </div>
 
-            {/* 可拖动的人脸 */}
+            {/* 可拖动的头像 - 原始尺寸 */}
             {photoPreview && (
               <div
-                className={`absolute rounded-full overflow-hidden shadow-lg border-4 border-white ${
+                className={`absolute overflow-hidden ${
                   isDragging ? 'cursor-grabbing ring-4 ring-blue-400' : 'cursor-grab'
                 }`}
                 style={{
@@ -151,12 +143,8 @@ export default function DraggableCardPreview({
 
             {/* 单词文本 */}
             <div className="absolute bottom-4 left-0 right-0 text-center">
-              <div className="text-3xl font-bold mb-2 drop-shadow-lg">
-                {word.phoneticSegments.map((seg, idx) => (
-                  <span key={idx} className={phoneticColors[seg.category]}>
-                    {seg.text}
-                  </span>
-                ))}
+              <div className="text-3xl font-bold mb-2 drop-shadow-lg text-gray-800">
+                {word.english}
               </div>
               <div className="text-xl text-gray-700 font-medium drop-shadow">
                 {word.chinese}

@@ -1,0 +1,169 @@
+{
+  "id": "TPR-L0",
+  "name": "动作指令（初级，适合 0-1.5 岁）",
+  "icon": "👶",
+  "count": 20,
+  "words": [
+    {
+      "id": "Clap-your-hands",
+      "english": "Clap your hands",
+      "chinese": "拍拍手",
+      "phoneticSegments": [{"text":"c","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Clap-your-hands.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Touch-your-nose",
+      "english": "Touch your nose",
+      "chinese": "摸摸鼻子",
+      "phoneticSegments": [{"text":"t","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Touch-your-nose.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Stomp-your-feet",
+      "english": "Stomp your feet",
+      "chinese": "跺跺脚",
+      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Stomp-your-feet.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Wave-goodbye",
+      "english": "Wave goodbye",
+      "chinese": "挥手再见",
+      "phoneticSegments": [{"text":"w","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Wave-goodbye.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Blow-a-kiss",
+      "english": "Blow a kiss",
+      "chinese": "飞吻",
+      "phoneticSegments": [{"text":"b","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Blow-a-kiss.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Nod-your-head",
+      "english": "Nod your head",
+      "chinese": "点点头",
+      "phoneticSegments": [{"text":"n","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Nod-your-head.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Shake-your-head",
+      "english": "Shake your head",
+      "chinese": "摇摇头",
+      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Shake-your-head.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Open-your-mouth",
+      "english": "Open your mouth",
+      "chinese": "张开嘴巴",
+      "phoneticSegments": [{"text":"o","category":"short-vowel"}],
+      "cardImageUrl": "/cards/tpr-l0/Open-your-mouth.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Close-your-eyes",
+      "english": "Close your eyes",
+      "chinese": "闭上眼睛",
+      "phoneticSegments": [{"text":"c","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Close-your-eyes.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Touch-your-toes",
+      "english": "Touch your toes",
+      "chinese": "摸摸脚趾",
+      "phoneticSegments": [{"text":"t","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Touch-your-toes.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Pat-your-tummy",
+      "english": "Pat your tummy",
+      "chinese": "拍拍肚子",
+      "phoneticSegments": [{"text":"p","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Pat-your-tummy.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Wiggle-your-fingers",
+      "english": "Wiggle your fingers",
+      "chinese": "动动手指",
+      "phoneticSegments": [{"text":"w","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Wiggle-your-fingers.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Stand-up",
+      "english": "Stand up",
+      "chinese": "站起来",
+      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Stand-up.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Sit-down",
+      "english": "Sit down",
+      "chinese": "坐下来",
+      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Sit-down.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Turn-around",
+      "english": "Turn around",
+      "chinese": "转一圈",
+      "phoneticSegments": [{"text":"t","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Turn-around.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Jump-up",
+      "english": "Jump up",
+      "chinese": "跳一跳",
+      "phoneticSegments": [{"text":"j","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Jump-up.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Give-me-five",
+      "english": "Give me five",
+      "chinese": "击个掌",
+      "phoneticSegments": [{"text":"g","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Give-me-five.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Hug-yourself",
+      "english": "Hug yourself",
+      "chinese": "抱抱自己",
+      "phoneticSegments": [{"text":"h","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Hug-yourself.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Point-to-the-sky",
+      "english": "Point to the sky",
+      "chinese": "指向天空",
+      "phoneticSegments": [{"text":"p","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Point-to-the-sky.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "Touch-the-ground",
+      "english": "Touch the ground",
+      "chinese": "摸摸地面",
+      "phoneticSegments": [{"text":"t","category":"consonant"}],
+      "cardImageUrl": "/cards/tpr-l0/Touch-the-ground.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    }
+  ]
+}
+
