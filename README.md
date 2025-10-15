@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 宝宝单词闪卡生成器
 
-## Getting Started
+> 用宝宝的照片生成个性化英语学习闪卡，让学习更有趣！
 
-First, run the development server:
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-15.5.5-black.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
+![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38bdf8.svg)
+
+## ✨ 特点
+
+- 🎯 **个性化学习** - 用宝宝照片制作专属闪卡
+- 📚 **科学词库** - 动物、水果、颜色等主题分类
+- 🎨 **自然拼读** - 7种颜色标注不同发音规则
+- 📐 **多种尺寸** - 6种卡片尺寸适应不同场景
+- 💝 **可爱设计** - 小清新UI，宝宝更喜欢
+- 📱 **移动适配** - 完美支持手机和平板
+
+## 🚀 快速开始
 
 ```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 在浏览器中打开 http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**5分钟上手**: 查看 [快速启动指南](QUICK_START.md) 了解详细步骤
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📖 文档导航
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 给用户的文档
+- 📱 [**快速启动指南**](QUICK_START.md) - 5分钟学会使用（推荐先看）
+- 📖 [**使用指南**](USAGE_GUIDE.md) - 详细的操作说明和技巧
+- ✨ [**功能详解**](FEATURES.md) - 了解所有功能特性
 
-## Learn More
+### 给开发者的文档
+- 🏗️ [**项目说明**](PROJECT_README.md) - 技术架构和项目结构
+- 🚀 [**开发计划**](DEVELOPMENT_PLAN.md) - 功能路线图和技术方案
+- 📊 [**项目总结**](PROJECT_SUMMARY.md) - 完成情况和成果总结
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 核心功能
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ✅ 已实现（Phase 1）
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [x] 照片上传（拖拽/点击）
+- [x] 3个单词库（51个单词）
+- [x] 自然拼读颜色标注
+- [x] 6种卡片尺寸选择
+- [x] 单词选择和预览
+- [x] 响应式UI设计
 
-## Deploy on Vercel
+### 🔄 开发中（Phase 2）
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] 智能人脸检测和抠图
+- [ ] Canvas卡片渲染
+- [ ] PDF导出功能
+- [ ] 图片批量下载
+- [ ] 排版预览
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 界面预览
+
+### 主界面
+- **顶部**: 精美的标题和说明
+- **左侧**: 照片上传、词库选择、尺寸设置、导出面板
+- **右侧**: 单词卡片网格展示
+
+### 交互特性
+- 🎨 渐变色配色方案
+- ⭕ 圆角卡片设计
+- ✨ 流畅过渡动画
+- 📱 移动端适配
+
+## 📚 单词库
+
+| 词库 | 单词数 | 适用年龄 | 难度 |
+|------|--------|---------|------|
+| 🐾 动物 | 20 | 2-6岁 | ⭐⭐ |
+| 🍎 水果 | 20 | 2-5岁 | ⭐⭐ |
+| 🎨 颜色 | 11 | 2-4岁 | ⭐ |
+
+## 🎨 自然拼读颜色
+
+- 🔴 **红色** - 短元音
+- 🔵 **蓝色** - 长元音
+- ⚫ **黑色** - 辅音
+- 🟠 **橙色** - 双辅音/三辅音
+- ⚪ **灰色** - 不发音字母
+- 🟣 **紫色** - R控制元音
+- 🩷 **粉色** - 双元音
+
+## 📐 卡片尺寸
+
+| 类型 | 数量/页 | 尺寸(mm) | 适用场景 |
+|------|---------|----------|---------|
+| 超大卡 | 2张 | 148×105 | 幼儿启蒙 |
+| 大卡 | 4张 | 100×138 | 图片为主 |
+| **标准卡** ⭐ | 6张 | 95×68 | 默认推荐 |
+| 小卡 | 8张 | 95×68 | 经济实用 |
+| 方形卡 | 9张 | 64×64 | ins风 |
+| 迷你卡 | 10张 | 95×55 | 超便携 |
+
+## 🛠️ 技术栈
+
+- **框架**: [Next.js 15](https://nextjs.org/) (App Router)
+- **语言**: [TypeScript](https://www.typescriptlang.org/)
+- **样式**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **包管理**: npm
+
+## 📁 项目结构
+
+```
+wordcard/
+├── src/
+│   ├── app/              # Next.js应用
+│   ├── components/       # React组件
+│   ├── data/            # 单词库数据
+│   └── types/           # TypeScript类型
+├── public/              # 静态资源
+└── docs/               # 文档（各种.md文件）
+```
+
+## 🚀 部署
+
+### Vercel（推荐）
+```bash
+npm i -g vercel
+vercel
+```
+
+### 其他平台
+支持所有支持Next.js的平台：Netlify、Cloudflare Pages等
+
+## 📱 浏览器支持
+
+- ✅ Chrome/Edge（推荐）
+- ✅ Firefox
+- ✅ Safari
+- ✅ 移动端浏览器
+
+## 💡 使用场景
+
+- 👨‍👩‍👧 **家庭教育**: 为孩子制作专属学习材料
+- 🎓 **幼儿园**: 批量生成教学闪卡
+- 🎁 **送礼**: 独特的个性化礼物
+- 📚 **培训机构**: 定制化教学工具
+
+## 🎓 教育价值
+
+- 📖 **系统学习**: 科学分类的词库
+- 🎨 **视觉记忆**: 颜色编码降低难度
+- 💝 **情感连接**: 宝宝照片增强兴趣
+- 🔤 **拼读技巧**: 掌握自然拼读规则
+
+## 🤝 贡献
+
+欢迎提出问题和建议！
+
+## 📄 许可
+
+本项目仅供学习和个人使用。
+
+## 🙏 致谢
+
+感谢所有支持幼儿教育的家长和老师们！
+
+---
+
+**💝 Made with love for babies**
+
+让我们一起为孩子创造快乐的学习时光！🌈

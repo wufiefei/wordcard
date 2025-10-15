@@ -1,102 +1,131 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
+import PhotoUpload from '@/components/PhotoUpload';
+import LibrarySelector from '@/components/LibrarySelector';
+import CardSizeSelector from '@/components/CardSizeSelector';
+import WordCardList from '@/components/WordCardList';
+import ExportPanel from '@/components/ExportPanel';
+import { wordLibraries, getLibraryById } from '@/data/libraries';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+  const [selectedLibraryId, setSelectedLibraryId] = useState<string | null>(null);
+  const [selectedCardSize, setSelectedCardSize] = useState<string>('standard');
+  const [selectedWords, setSelectedWords] = useState<Set<string>>(new Set());
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const handlePhotoUpload = (_file: File, previewUrl: string) => {
+    setPhotoPreview(previewUrl);
+  };
+
+  const handleSelectLibrary = (libraryId: string) => {
+    setSelectedLibraryId(libraryId);
+    setSelectedWords(new Set());
+  };
+
+  const handleToggleWord = (wordId: string) => {
+    const newSelected = new Set(selectedWords);
+    if (newSelected.has(wordId)) {
+      newSelected.delete(wordId);
+    } else {
+      newSelected.add(wordId);
+    }
+    setSelectedWords(newSelected);
+  };
+
+  const handleToggleAll = () => {
+    const currentLibrary = selectedLibraryId ? getLibraryById(selectedLibraryId) : null;
+    if (!currentLibrary) return;
+
+    if (selectedWords.size === currentLibrary.words.length) {
+      setSelectedWords(new Set());
+    } else {
+      setSelectedWords(new Set(currentLibrary.words.map(w => w.id)));
+    }
+  };
+
+  const handleExportPDF = () => {
+    alert('PDF导出功能开发中...');
+  };
+
+  const handleExportImages = () => {
+    alert('图片导出功能开发中...');
+  };
+
+  const handlePreview = () => {
+    alert('排版预览功能开发中...');
+  };
+
+  const currentLibrary = selectedLibraryId ? getLibraryById(selectedLibraryId) : null;
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+      {/* 头部 */}
+      <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+            ✨ 宝宝单词闪卡生成器 ✨
+          </h1>
+          <p className="text-center text-gray-600 text-sm mt-2">
+            上传照片，选择单词，生成专属宝宝的可爱闪卡
+          </p>
+        </div>
+      </header>
+
+      {/* 主内容 */}
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* 左侧：设置面板 */}
+          <div className="lg:col-span-1 space-y-6">
+            {/* 照片上传 */}
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              <PhotoUpload onPhotoUpload={handlePhotoUpload} />
+            </div>
+
+            {/* 单词库选择 */}
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              <LibrarySelector
+                libraries={wordLibraries}
+                selectedLibraryId={selectedLibraryId}
+                onSelectLibrary={handleSelectLibrary}
+              />
+            </div>
+
+            {/* 卡片尺寸选择 */}
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              <CardSizeSelector
+                selectedSize={selectedCardSize}
+                onSelectSize={setSelectedCardSize}
+              />
+            </div>
+
+            {/* 导出面板 */}
+            <ExportPanel
+              selectedCount={selectedWords.size}
+              onExportPDF={handleExportPDF}
+              onExportImages={handleExportImages}
+              onPreview={handlePreview}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+
+          {/* 右侧：单词卡片列表 */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              <WordCardList
+                words={currentLibrary?.words || []}
+                selectedWords={selectedWords}
+                onToggleWord={handleToggleWord}
+                onToggleAll={handleToggleAll}
+                photoPreview={photoPreview}
+              />
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* 底部 */}
+      <footer className="mt-12 py-6 text-center text-gray-500 text-sm">
+        <p>💝 Made with love for babies</p>
       </footer>
     </div>
   );

@@ -1,0 +1,291 @@
+{
+  "id": "fruits",
+  "name": "水果",
+  "icon": "🍎",
+  "count": 20,
+  "words": [
+    {
+      "id": "apple",
+      "english": "apple",
+      "chinese": "苹果",
+      "phoneticSegments": [
+        { "text": "a", "category": "short-vowel" },
+        { "text": "pp", "category": "consonant" },
+        { "text": "le", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/apple.jpg",
+      "facePosition": { "x": 30, "y": 25, "width": 38 }
+    },
+    {
+      "id": "banana",
+      "english": "banana",
+      "chinese": "香蕉",
+      "phoneticSegments": [
+        { "text": "b", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" }
+      ],
+      "cardImageUrl": "/cards/fruits/banana.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 32 }
+    },
+    {
+      "id": "orange",
+      "english": "orange",
+      "chinese": "橙子",
+      "phoneticSegments": [
+        { "text": "or", "category": "r-controlled" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "ge", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/orange.jpg",
+      "facePosition": { "x": 32, "y": 28, "width": 36 }
+    },
+    {
+      "id": "grape",
+      "english": "grape",
+      "chinese": "葡萄",
+      "phoneticSegments": [
+        { "text": "gr", "category": "consonant" },
+        { "text": "a", "category": "long-vowel" },
+        { "text": "pe", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/grape.jpg",
+      "facePosition": { "x": 34, "y": 26, "width": 34 }
+    },
+    {
+      "id": "strawberry",
+      "english": "strawberry",
+      "chinese": "草莓",
+      "phoneticSegments": [
+        { "text": "str", "category": "consonant" },
+        { "text": "aw", "category": "diphthong" },
+        { "text": "b", "category": "consonant" },
+        { "text": "err", "category": "r-controlled" },
+        { "text": "y", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/strawberry.jpg",
+      "facePosition": { "x": 30, "y": 24, "width": 38 }
+    },
+    {
+      "id": "watermelon",
+      "english": "watermelon",
+      "chinese": "西瓜",
+      "phoneticSegments": [
+        { "text": "w", "category": "consonant" },
+        { "text": "a", "category": "long-vowel" },
+        { "text": "t", "category": "consonant" },
+        { "text": "er", "category": "r-controlled" },
+        { "text": "m", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "l", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/watermelon.jpg",
+      "facePosition": { "x": 28, "y": 22, "width": 42 }
+    },
+    {
+      "id": "pear",
+      "english": "pear",
+      "chinese": "梨",
+      "phoneticSegments": [
+        { "text": "p", "category": "consonant" },
+        { "text": "ear", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/fruits/pear.jpg",
+      "facePosition": { "x": 33, "y": 27, "width": 35 }
+    },
+    {
+      "id": "peach",
+      "english": "peach",
+      "chinese": "桃子",
+      "phoneticSegments": [
+        { "text": "p", "category": "consonant" },
+        { "text": "ea", "category": "long-vowel" },
+        { "text": "ch", "category": "digraph" }
+      ],
+      "cardImageUrl": "/cards/fruits/peach.jpg",
+      "facePosition": { "x": 32, "y": 26, "width": 36 }
+    },
+    {
+      "id": "cherry",
+      "english": "cherry",
+      "chinese": "樱桃",
+      "phoneticSegments": [
+        { "text": "ch", "category": "digraph" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "rr", "category": "consonant" },
+        { "text": "y", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/cherry.jpg",
+      "facePosition": { "x": 35, "y": 28, "width": 32 }
+    },
+    {
+      "id": "lemon",
+      "english": "lemon",
+      "chinese": "柠檬",
+      "phoneticSegments": [
+        { "text": "l", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "m", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/lemon.jpg",
+      "facePosition": { "x": 34, "y": 29, "width": 34 }
+    },
+    {
+      "id": "mango",
+      "english": "mango",
+      "chinese": "芒果",
+      "phoneticSegments": [
+        { "text": "m", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "ng", "category": "digraph" },
+        { "text": "o", "category": "long-vowel" }
+      ],
+      "cardImageUrl": "/cards/fruits/mango.jpg",
+      "facePosition": { "x": 31, "y": 25, "width": 37 }
+    },
+    {
+      "id": "pineapple",
+      "english": "pineapple",
+      "chinese": "菠萝",
+      "phoneticSegments": [
+        { "text": "p", "category": "consonant" },
+        { "text": "i", "category": "long-vowel" },
+        { "text": "ne", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "pp", "category": "consonant" },
+        { "text": "le", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/pineapple.jpg",
+      "facePosition": { "x": 29, "y": 23, "width": 40 }
+    },
+    {
+      "id": "kiwi",
+      "english": "kiwi",
+      "chinese": "猕猴桃",
+      "phoneticSegments": [
+        { "text": "k", "category": "consonant" },
+        { "text": "i", "category": "long-vowel" },
+        { "text": "w", "category": "consonant" },
+        { "text": "i", "category": "long-vowel" }
+      ],
+      "cardImageUrl": "/cards/fruits/kiwi.jpg",
+      "facePosition": { "x": 36, "y": 30, "width": 30 }
+    },
+    {
+      "id": "coconut",
+      "english": "coconut",
+      "chinese": "椰子",
+      "phoneticSegments": [
+        { "text": "c", "category": "consonant" },
+        { "text": "o", "category": "long-vowel" },
+        { "text": "c", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "u", "category": "short-vowel" },
+        { "text": "t", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/coconut.jpg",
+      "facePosition": { "x": 30, "y": 26, "width": 38 }
+    },
+    {
+      "id": "blueberry",
+      "english": "blueberry",
+      "chinese": "蓝莓",
+      "phoneticSegments": [
+        { "text": "bl", "category": "consonant" },
+        { "text": "ue", "category": "long-vowel" },
+        { "text": "b", "category": "consonant" },
+        { "text": "err", "category": "r-controlled" },
+        { "text": "y", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/blueberry.jpg",
+      "facePosition": { "x": 33, "y": 28, "width": 34 }
+    },
+    {
+      "id": "plum",
+      "english": "plum",
+      "chinese": "李子",
+      "phoneticSegments": [
+        { "text": "pl", "category": "consonant" },
+        { "text": "u", "category": "short-vowel" },
+        { "text": "m", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/plum.jpg",
+      "facePosition": { "x": 35, "y": 29, "width": 32 }
+    },
+    {
+      "id": "papaya",
+      "english": "papaya",
+      "chinese": "木瓜",
+      "phoneticSegments": [
+        { "text": "p", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "p", "category": "consonant" },
+        { "text": "a", "category": "long-vowel" },
+        { "text": "y", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" }
+      ],
+      "cardImageUrl": "/cards/fruits/papaya.jpg",
+      "facePosition": { "x": 32, "y": 27, "width": 36 }
+    },
+    {
+      "id": "avocado",
+      "english": "avocado",
+      "chinese": "牛油果",
+      "phoneticSegments": [
+        { "text": "a", "category": "short-vowel" },
+        { "text": "v", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "c", "category": "consonant" },
+        { "text": "a", "category": "long-vowel" },
+        { "text": "d", "category": "consonant" },
+        { "text": "o", "category": "long-vowel" }
+      ],
+      "cardImageUrl": "/cards/fruits/avocado.jpg",
+      "facePosition": { "x": 31, "y": 25, "width": 37 }
+    },
+    {
+      "id": "pomegranate",
+      "english": "pomegranate",
+      "chinese": "石榴",
+      "phoneticSegments": [
+        { "text": "p", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "me", "category": "consonant" },
+        { "text": "gr", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "te", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/pomegranate.jpg",
+      "facePosition": { "x": 28, "y": 24, "width": 40 }
+    },
+    {
+      "id": "dragonfruit",
+      "english": "dragonfruit",
+      "chinese": "火龙果",
+      "phoneticSegments": [
+        { "text": "dr", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "g", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "fr", "category": "consonant" },
+        { "text": "ui", "category": "long-vowel" },
+        { "text": "t", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/fruits/dragonfruit.jpg",
+      "facePosition": { "x": 30, "y": 26, "width": 38 }
+    }
+  ]
+}
+
