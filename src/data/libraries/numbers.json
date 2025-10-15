@@ -1,0 +1,272 @@
+{
+  "id": "numbers",
+  "name": "数字字母",
+  "icon": "🔢",
+  "count": 20,
+  "words": [
+    {
+      "id": "one",
+      "english": "one",
+      "chinese": "一",
+      "phoneticSegments": [
+        { "text": "o", "category": "long-vowel" },
+        { "text": "ne", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/one.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "two",
+      "english": "two",
+      "chinese": "二",
+      "phoneticSegments": [
+        { "text": "t", "category": "consonant" },
+        { "text": "w", "category": "consonant" },
+        { "text": "o", "category": "long-vowel" }
+      ],
+      "cardImageUrl": "/cards/numbers/two.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "three",
+      "english": "three",
+      "chinese": "三",
+      "phoneticSegments": [
+        { "text": "th", "category": "digraph" },
+        { "text": "ree", "category": "long-vowel" }
+      ],
+      "cardImageUrl": "/cards/numbers/three.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "four",
+      "english": "four",
+      "chinese": "四",
+      "phoneticSegments": [
+        { "text": "f", "category": "consonant" },
+        { "text": "our", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/numbers/four.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "five",
+      "english": "five",
+      "chinese": "五",
+      "phoneticSegments": [
+        { "text": "f", "category": "consonant" },
+        { "text": "i", "category": "long-vowel" },
+        { "text": "ve", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/five.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "six",
+      "english": "six",
+      "chinese": "六",
+      "phoneticSegments": [
+        { "text": "s", "category": "consonant" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "x", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/six.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "seven",
+      "english": "seven",
+      "chinese": "七",
+      "phoneticSegments": [
+        { "text": "s", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "v", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/seven.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "eight",
+      "english": "eight",
+      "chinese": "八",
+      "phoneticSegments": [
+        { "text": "eigh", "category": "long-vowel" },
+        { "text": "t", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/eight.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "nine",
+      "english": "nine",
+      "chinese": "九",
+      "phoneticSegments": [
+        { "text": "n", "category": "consonant" },
+        { "text": "i", "category": "long-vowel" },
+        { "text": "ne", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/nine.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "ten",
+      "english": "ten",
+      "chinese": "十",
+      "phoneticSegments": [
+        { "text": "t", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/ten.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "eleven",
+      "english": "eleven",
+      "chinese": "十一",
+      "phoneticSegments": [
+        { "text": "e", "category": "short-vowel" },
+        { "text": "l", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "v", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/eleven.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "twelve",
+      "english": "twelve",
+      "chinese": "十二",
+      "phoneticSegments": [
+        { "text": "t", "category": "consonant" },
+        { "text": "w", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "lve", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/twelve.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "thirteen",
+      "english": "thirteen",
+      "chinese": "十三",
+      "phoneticSegments": [
+        { "text": "th", "category": "digraph" },
+        { "text": "ir", "category": "r-controlled" },
+        { "text": "t", "category": "consonant" },
+        { "text": "ee", "category": "long-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/thirteen.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "fourteen",
+      "english": "fourteen",
+      "chinese": "十四",
+      "phoneticSegments": [
+        { "text": "f", "category": "consonant" },
+        { "text": "our", "category": "r-controlled" },
+        { "text": "t", "category": "consonant" },
+        { "text": "ee", "category": "long-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/fourteen.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "fifteen",
+      "english": "fifteen",
+      "chinese": "十五",
+      "phoneticSegments": [
+        { "text": "f", "category": "consonant" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "f", "category": "consonant" },
+        { "text": "t", "category": "consonant" },
+        { "text": "ee", "category": "long-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/fifteen.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "sixteen",
+      "english": "sixteen",
+      "chinese": "十六",
+      "phoneticSegments": [
+        { "text": "s", "category": "consonant" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "x", "category": "consonant" },
+        { "text": "t", "category": "consonant" },
+        { "text": "ee", "category": "long-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/sixteen.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "seventeen",
+      "english": "seventeen",
+      "chinese": "十七",
+      "phoneticSegments": [
+        { "text": "s", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "v", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "t", "category": "consonant" },
+        { "text": "ee", "category": "long-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/seventeen.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "eighteen",
+      "english": "eighteen",
+      "chinese": "十八",
+      "phoneticSegments": [
+        { "text": "eigh", "category": "long-vowel" },
+        { "text": "t", "category": "consonant" },
+        { "text": "ee", "category": "long-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/eighteen.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "nineteen",
+      "english": "nineteen",
+      "chinese": "十九",
+      "phoneticSegments": [
+        { "text": "n", "category": "consonant" },
+        { "text": "i", "category": "long-vowel" },
+        { "text": "ne", "category": "consonant" },
+        { "text": "t", "category": "consonant" },
+        { "text": "ee", "category": "long-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/nineteen.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "twenty",
+      "english": "twenty",
+      "chinese": "二十",
+      "phoneticSegments": [
+        { "text": "t", "category": "consonant" },
+        { "text": "w", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "ty", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/numbers/twenty.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    }
+  ]
+}
+

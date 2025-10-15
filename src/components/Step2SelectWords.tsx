@@ -1,0 +1,259 @@
+'use client';
+
+import { WordLibrary, Word, PhoneticCategory } from '@/types/wordcard';
+import { useState } from 'react';
+import Image from 'next/image';
+import DraggableCardPreview from './DraggableCardPreview';
+
+interface Step2SelectWordsProps {
+  libraries: WordLibrary[];
+  selectedLibraryId: string | null;
+  selectedWords: Set<string>;
+  photoPreview: string | null;
+  onSelectLibrary: (libraryId: string) => void;
+  onToggleWord: (wordId: string) => void;
+  onToggleAll: () => void;
+  onNext: () => void;
+  onBack: () => void;
+}
+
+const phoneticColors: Record<PhoneticCategory, string> = {
+  'short-vowel': 'text-red-600',
+  'long-vowel': 'text-blue-600',
+  'consonant': 'text-black',
+  'digraph': 'text-orange-600',
+  'silent': 'text-gray-400',
+  'r-controlled': 'text-purple-600',
+  'diphthong': 'text-pink-600',
+};
+
+export default function Step2SelectWords({
+  libraries,
+  selectedLibraryId,
+  selectedWords,
+  photoPreview,
+  onSelectLibrary,
+  onToggleWord,
+  onToggleAll,
+  onNext,
+  onBack,
+}: Step2SelectWordsProps) {
+  const [previewWord, setPreviewWord] = useState<Word | null>(null);
+  
+  const currentLibrary = libraries.find(lib => lib.id === selectedLibraryId);
+  const allSelected = currentLibrary && selectedWords.size === currentLibrary.words.length;
+
+  return (
+    <div className="flex flex-col h-full">
+      <div className="flex-1 flex flex-col lg:flex-row gap-6 pb-32 lg:pb-6">
+        {/* 左侧：单词库选择 */}
+        <div className="w-full lg:w-1/3 space-y-4">
+          <div className="bg-white rounded-2xl shadow-lg p-6">
+            <h2 className="text-xl font-semibold text-purple-600 mb-4 flex items-center gap-2">
+              <span>📚</span>
+              <span>选择单词库</span>
+            </h2>
+
+            <div className="space-y-2">
+              {libraries.map((library) => (
+                <button
+                  key={library.id}
+                  onClick={() => onSelectLibrary(library.id)}
+                  className={`w-full p-3 rounded-xl transition-all text-left ${
+                    selectedLibraryId === library.id
+                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-md'
+                      : 'bg-gray-50 hover:bg-gray-100 text-gray-700'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="text-2xl">{library.icon}</div>
+                    <div className="flex-1">
+                      <div className="font-medium">{library.name}</div>
+                      <div className="text-xs opacity-80">{library.count}个单词</div>
+                    </div>
+                    {selectedLibraryId === library.id && (
+                      <div className="text-lg">✓</div>
+                    )}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* 右侧：单词卡片预览 */}
+        <div className="flex-1">
+        <div className="bg-white rounded-2xl shadow-lg p-6 h-full overflow-hidden flex flex-col">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-semibold text-pink-600 flex items-center gap-2">
+              <span>✨</span>
+              <span>选择单词卡片</span>
+            </h2>
+            {currentLibrary && (
+              <button
+                onClick={onToggleAll}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  allSelected
+                    ? 'bg-pink-500 text-white hover:bg-pink-600'
+                    : 'bg-white text-pink-600 border-2 border-pink-500 hover:bg-pink-50'
+                }`}
+              >
+                {allSelected ? '取消全选' : selectedWords.size > 0 ? `已选 ${selectedWords.size}` : '全选'}
+              </button>
+            )}
+          </div>
+
+          <div className="flex-1 overflow-y-auto">
+            {!currentLibrary ? (
+              <div className="h-full flex items-center justify-center text-gray-400">
+                <div className="text-center">
+                  <div className="text-6xl mb-4">📖</div>
+                  <p>请先选择一个单词库</p>
+                </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 pb-4">
+                {currentLibrary.words.map((word) => {
+                  const isSelected = selectedWords.has(word.id);
+                  
+                  return (
+                    <div
+                      key={word.id}
+                      className={`relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer border-2 ${
+                        isSelected ? 'border-pink-400' : 'border-transparent'
+                      }`}
+                    >
+                      {/* 选择框 */}
+                      <div
+                        onClick={() => onToggleWord(word.id)}
+                        className="absolute top-2 left-2 z-10"
+                      >
+                        <div
+                          className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                            isSelected
+                              ? 'bg-pink-500 border-pink-500'
+                              : 'bg-white border-gray-300'
+                          }`}
+                        >
+                          {isSelected && (
+                            <svg
+                              className="w-4 h-4 text-white"
+                              fill="none"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* 卡片预览 */}
+                      <div
+                        onClick={() => setPreviewWord(word)}
+                        className="aspect-square bg-gradient-to-br from-yellow-100 to-pink-100 flex items-center justify-center relative"
+                      >
+                        <div className="text-4xl">🎨</div>
+                        {/* 小头像示意 */}
+                        {photoPreview && (
+                          <div className="absolute top-2 right-2 w-8 h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                            <Image
+                              src={photoPreview}
+                              alt="宝宝"
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        )}
+                      </div>
+
+                      {/* 单词信息 */}
+                      <div className="p-2">
+                        <div className="font-bold text-center text-sm mb-1">
+                          {word.phoneticSegments.map((seg, idx) => (
+                            <span key={idx} className={phoneticColors[seg.category]}>
+                              {seg.text}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="text-xs text-gray-600 text-center">
+                          {word.chinese}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+        </div>
+      </div>
+
+      {/* 固定底部按钮 - 移动端 */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-sm border-t border-gray-200 lg:hidden z-30">
+        <div className="space-y-2">
+          <button
+            onClick={onBack}
+            className="w-full py-3 rounded-xl font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all"
+          >
+            ← 上一步
+          </button>
+          <button
+            onClick={onNext}
+            disabled={selectedWords.size === 0}
+            className={`w-full py-3 rounded-xl font-medium transition-all ${
+              selectedWords.size > 0
+                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg'
+                : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+            }`}
+          >
+            {selectedWords.size > 0
+              ? `下一步：选择尺寸 (已选${selectedWords.size}张) →`
+              : '请选择至少一个单词'}
+          </button>
+        </div>
+      </div>
+
+      {/* 桌面端按钮 */}
+      <div className="hidden lg:block mt-4 space-y-2">
+        <button
+          onClick={onBack}
+          className="w-full py-3 rounded-xl font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all"
+        >
+          ← 上一步
+        </button>
+        <button
+          onClick={onNext}
+          disabled={selectedWords.size === 0}
+          className={`w-full py-3 rounded-xl font-medium transition-all ${
+            selectedWords.size > 0
+              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
+              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+          }`}
+        >
+          {selectedWords.size > 0
+            ? `下一步：选择尺寸 (已选${selectedWords.size}张) →`
+            : '请选择至少一个单词'}
+        </button>
+      </div>
+
+      {/* 预览弹窗 - 使用可拖动组件 */}
+      {previewWord && (
+        <DraggableCardPreview
+          word={previewWord}
+          photoPreview={photoPreview}
+          onClose={() => setPreviewWord(null)}
+          onPositionChange={(x, y) => {
+            console.log('新位置:', { x, y });
+            // 这里可以保存新位置，后续用于生成最终卡片
+          }}
+        />
+      )}
+    </div>
+  );
+}
+

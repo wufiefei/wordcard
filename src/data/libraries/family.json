@@ -1,0 +1,208 @@
+{
+  "id": "family",
+  "name": "家庭关系",
+  "icon": "👨‍👩‍👧‍👦",
+  "count": 15,
+  "words": [
+    {
+      "id": "family",
+      "english": "family",
+      "chinese": "家庭",
+      "phoneticSegments": [
+        { "text": "f", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "m", "category": "consonant" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "ly", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/family/family.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "father",
+      "english": "father",
+      "chinese": "爸爸",
+      "phoneticSegments": [
+        { "text": "f", "category": "consonant" },
+        { "text": "a", "category": "long-vowel" },
+        { "text": "th", "category": "digraph" },
+        { "text": "er", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/family/father.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "mother",
+      "english": "mother",
+      "chinese": "妈妈",
+      "phoneticSegments": [
+        { "text": "m", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "th", "category": "digraph" },
+        { "text": "er", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/family/mother.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "brother",
+      "english": "brother",
+      "chinese": "兄弟",
+      "phoneticSegments": [
+        { "text": "br", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "th", "category": "digraph" },
+        { "text": "er", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/family/brother.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "sister",
+      "english": "sister",
+      "chinese": "姐妹",
+      "phoneticSegments": [
+        { "text": "s", "category": "consonant" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "st", "category": "consonant" },
+        { "text": "er", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/family/sister.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "grandpa",
+      "english": "grandpa",
+      "chinese": "爷爷/外公",
+      "phoneticSegments": [
+        { "text": "gr", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "nd", "category": "consonant" },
+        { "text": "p", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" }
+      ],
+      "cardImageUrl": "/cards/family/grandpa.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "grandma",
+      "english": "grandma",
+      "chinese": "奶奶/外婆",
+      "phoneticSegments": [
+        { "text": "gr", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "nd", "category": "consonant" },
+        { "text": "m", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" }
+      ],
+      "cardImageUrl": "/cards/family/grandma.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "baby",
+      "english": "baby",
+      "chinese": "宝宝",
+      "phoneticSegments": [
+        { "text": "b", "category": "consonant" },
+        { "text": "a", "category": "long-vowel" },
+        { "text": "b", "category": "consonant" },
+        { "text": "y", "category": "long-vowel" }
+      ],
+      "cardImageUrl": "/cards/family/baby.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "son",
+      "english": "son",
+      "chinese": "儿子",
+      "phoneticSegments": [
+        { "text": "s", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/family/son.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "daughter",
+      "english": "daughter",
+      "chinese": "女儿",
+      "phoneticSegments": [
+        { "text": "d", "category": "consonant" },
+        { "text": "au", "category": "diphthong" },
+        { "text": "gh", "category": "silent" },
+        { "text": "t", "category": "consonant" },
+        { "text": "er", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/family/daughter.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "uncle",
+      "english": "uncle",
+      "chinese": "叔叔/舅舅",
+      "phoneticSegments": [
+        { "text": "u", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" },
+        { "text": "c", "category": "consonant" },
+        { "text": "le", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/family/uncle.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "aunt",
+      "english": "aunt",
+      "chinese": "阿姨/姑姑",
+      "phoneticSegments": [
+        { "text": "au", "category": "diphthong" },
+        { "text": "nt", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/family/aunt.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "cousin",
+      "english": "cousin",
+      "chinese": "表兄妹/堂兄妹",
+      "phoneticSegments": [
+        { "text": "c", "category": "consonant" },
+        { "text": "ou", "category": "short-vowel" },
+        { "text": "s", "category": "consonant" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/family/cousin.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "parents",
+      "english": "parents",
+      "chinese": "父母",
+      "phoneticSegments": [
+        { "text": "p", "category": "consonant" },
+        { "text": "ar", "category": "r-controlled" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "nts", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/family/parents.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "children",
+      "english": "children",
+      "chinese": "孩子们",
+      "phoneticSegments": [
+        { "text": "ch", "category": "digraph" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "l", "category": "consonant" },
+        { "text": "dr", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/family/children.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    }
+  ]
+}
+

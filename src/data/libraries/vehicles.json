@@ -1,0 +1,207 @@
+{
+  "id": "vehicles",
+  "name": "交通工具",
+  "icon": "🚗",
+  "count": 15,
+  "words": [
+    {
+      "id": "car",
+      "english": "car",
+      "chinese": "汽车",
+      "phoneticSegments": [
+        { "text": "c", "category": "consonant" },
+        { "text": "ar", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/vehicles/car.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "bus",
+      "english": "bus",
+      "chinese": "公交车",
+      "phoneticSegments": [
+        { "text": "b", "category": "consonant" },
+        { "text": "u", "category": "short-vowel" },
+        { "text": "s", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/bus.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "train",
+      "english": "train",
+      "chinese": "火车",
+      "phoneticSegments": [
+        { "text": "tr", "category": "consonant" },
+        { "text": "ai", "category": "long-vowel" },
+        { "text": "n", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/train.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "plane",
+      "english": "plane",
+      "chinese": "飞机",
+      "phoneticSegments": [
+        { "text": "pl", "category": "consonant" },
+        { "text": "a", "category": "long-vowel" },
+        { "text": "ne", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/plane.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "ship",
+      "english": "ship",
+      "chinese": "轮船",
+      "phoneticSegments": [
+        { "text": "sh", "category": "digraph" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "p", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/ship.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "boat",
+      "english": "boat",
+      "chinese": "小船",
+      "phoneticSegments": [
+        { "text": "b", "category": "consonant" },
+        { "text": "oa", "category": "long-vowel" },
+        { "text": "t", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/boat.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "bike",
+      "english": "bike",
+      "chinese": "自行车",
+      "phoneticSegments": [
+        { "text": "b", "category": "consonant" },
+        { "text": "i", "category": "long-vowel" },
+        { "text": "ke", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/bike.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "motorcycle",
+      "english": "motorcycle",
+      "chinese": "摩托车",
+      "phoneticSegments": [
+        { "text": "m", "category": "consonant" },
+        { "text": "o", "category": "long-vowel" },
+        { "text": "t", "category": "consonant" },
+        { "text": "or", "category": "r-controlled" },
+        { "text": "c", "category": "consonant" },
+        { "text": "y", "category": "long-vowel" },
+        { "text": "cle", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/motorcycle.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "truck",
+      "english": "truck",
+      "chinese": "卡车",
+      "phoneticSegments": [
+        { "text": "tr", "category": "consonant" },
+        { "text": "u", "category": "short-vowel" },
+        { "text": "ck", "category": "digraph" }
+      ],
+      "cardImageUrl": "/cards/vehicles/truck.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "taxi",
+      "english": "taxi",
+      "chinese": "出租车",
+      "phoneticSegments": [
+        { "text": "t", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "x", "category": "consonant" },
+        { "text": "i", "category": "long-vowel" }
+      ],
+      "cardImageUrl": "/cards/vehicles/taxi.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "subway",
+      "english": "subway",
+      "chinese": "地铁",
+      "phoneticSegments": [
+        { "text": "s", "category": "consonant" },
+        { "text": "u", "category": "short-vowel" },
+        { "text": "b", "category": "consonant" },
+        { "text": "w", "category": "consonant" },
+        { "text": "ay", "category": "long-vowel" }
+      ],
+      "cardImageUrl": "/cards/vehicles/subway.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "helicopter",
+      "english": "helicopter",
+      "chinese": "直升机",
+      "phoneticSegments": [
+        { "text": "h", "category": "consonant" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "l", "category": "consonant" },
+        { "text": "i", "category": "short-vowel" },
+        { "text": "c", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "pt", "category": "consonant" },
+        { "text": "er", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/vehicles/helicopter.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "rocket",
+      "english": "rocket",
+      "chinese": "火箭",
+      "phoneticSegments": [
+        { "text": "r", "category": "consonant" },
+        { "text": "o", "category": "short-vowel" },
+        { "text": "ck", "category": "digraph" },
+        { "text": "e", "category": "short-vowel" },
+        { "text": "t", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/rocket.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "scooter",
+      "english": "scooter",
+      "chinese": "滑板车",
+      "phoneticSegments": [
+        { "text": "sc", "category": "consonant" },
+        { "text": "oo", "category": "long-vowel" },
+        { "text": "t", "category": "consonant" },
+        { "text": "er", "category": "r-controlled" }
+      ],
+      "cardImageUrl": "/cards/vehicles/scooter.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    },
+    {
+      "id": "ambulance",
+      "english": "ambulance",
+      "chinese": "救护车",
+      "phoneticSegments": [
+        { "text": "a", "category": "short-vowel" },
+        { "text": "m", "category": "consonant" },
+        { "text": "b", "category": "consonant" },
+        { "text": "u", "category": "short-vowel" },
+        { "text": "l", "category": "consonant" },
+        { "text": "a", "category": "short-vowel" },
+        { "text": "nce", "category": "consonant" }
+      ],
+      "cardImageUrl": "/cards/vehicles/ambulance.jpg",
+      "facePosition": { "x": 35, "y": 30, "width": 35 }
+    }
+  ]
+}
+
