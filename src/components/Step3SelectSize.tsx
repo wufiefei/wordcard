@@ -1,11 +1,18 @@
 'use client';
 
-import { CARD_SIZES } from '@/types/wordcard';
+import { CARD_SIZES, WordLibrary, CardTemplate } from '@/types/wordcard';
 import { useState } from 'react';
+import WordCard from './WordCard';
 
 interface Step3SelectSizeProps {
   selectedSize: string;
   selectedWordsCount: number;
+  selectedWords: Set<string>;
+  libraries: WordLibrary[];
+  selectedLibraryId: string | null;
+  photoPreview: string | null;
+  wordPositions: Record<string, { x: number; y: number }>;
+  selectedTemplate: CardTemplate;
   onSelectSize: (sizeId: string) => void;
   onBack: () => void;
   onExportPDF: () => void;
@@ -15,6 +22,12 @@ interface Step3SelectSizeProps {
 export default function Step3SelectSize({
   selectedSize,
   selectedWordsCount,
+  selectedWords,
+  libraries,
+  selectedLibraryId,
+  photoPreview,
+  wordPositions,
+  selectedTemplate,
   onSelectSize,
   onBack,
   onExportPDF,
@@ -27,6 +40,15 @@ export default function Step3SelectSize({
   const totalPages = currentSizeConfig 
     ? Math.ceil(selectedWordsCount / currentSizeConfig.cardsPerSheet)
     : 1;
+
+  // 获取选中的单词列表
+  const getSelectedWordsList = () => {
+    const currentLibrary = libraries.find(lib => lib.id === selectedLibraryId);
+    if (!currentLibrary) return [];
+    return currentLibrary.words.filter(word => selectedWords.has(word.id));
+  };
+
+  const selectedWordsList = getSelectedWordsList();
 
   const handleZoomIn = () => setZoom(prev => Math.min(prev + 0.2, 2));
   const handleZoomOut = () => setZoom(prev => Math.max(prev - 0.2, 0.5));
@@ -167,34 +189,31 @@ export default function Step3SelectSize({
 
                 {/* 卡片网格 */}
                 {currentSizeConfig && (
-                  <div className="absolute inset-0 grid gap-0" style={{
+                  <div className="absolute inset-0 grid" style={{
                     gridTemplateColumns: `repeat(${currentSizeConfig.cols}, 1fr)`,
                     gridTemplateRows: `repeat(${currentSizeConfig.rows}, 1fr)`,
                     padding: '5mm',
+                    gap: '2mm',
                   }}>
                     {Array.from({ length: currentSizeConfig.cardsPerSheet }).map((_, idx) => {
                       const globalIndex = (currentPage - 1) * currentSizeConfig.cardsPerSheet + idx;
-                      const hasCard = globalIndex < selectedWordsCount;
+                      const word = selectedWordsList[globalIndex];
                       
                       return (
                         <div
                           key={idx}
-                          className={`relative ${
-                            hasCard 
-                              ? 'bg-gradient-to-br from-yellow-100 to-pink-100' 
-                              : 'bg-gray-100'
-                          }`}
-                          style={{ margin: '1mm' }}
+                          className="relative"
                         >
-                          {hasCard ? (
-                            <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-                              <div className="text-2xl mb-1">🎨</div>
-                              <div className="text-xs font-bold text-gray-700">
-                                卡片 {globalIndex + 1}
-                              </div>
-                            </div>
+                          {word ? (
+                            <WordCard
+                              word={word}
+                              photoPreview={photoPreview}
+                              selectedTemplate={selectedTemplate}
+                              wordPosition={wordPositions[word.id]}
+                              cardSize={currentSizeConfig}
+                            />
                           ) : (
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs">
+                            <div className="w-full h-full bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400 text-xs">
                               空白
                             </div>
                           )}

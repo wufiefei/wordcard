@@ -11,6 +11,8 @@
   "dependencies": {
     "@imgly/background-removal": "^1.7.0",
     "@imgly/background-removal-node": "^1.4.5",
+    "jspdf": "^3.0.3",
+    "jszip": "^3.10.1",
     "next": "15.5.5",
     "react": "19.1.0",
     "react-dom": "19.1.0"

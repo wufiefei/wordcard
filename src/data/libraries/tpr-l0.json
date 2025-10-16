@@ -9,7 +9,10 @@
       "english": "Clap your hands",
       "chinese": "拍拍手",
       "phoneticSegments": [{"text":"c","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Clap-your-hands.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/Clap-your-hands-cartoon.png",
+        "realistic": "/cards/tpr-l0/Clap-your-hands-realistic.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -17,7 +20,10 @@
       "english": "Touch your nose",
       "chinese": "摸摸鼻子",
       "phoneticSegments": [{"text":"t","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Touch-your-nose.jpg",
+      "": {
+        "cartoon": "/cards/tpr-l0/cartoon/Touch-your-nose.png",
+        "realistic": "/cards/tpr-l0/realistic/Touch-your-nose.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -25,7 +31,10 @@
       "english": "Stomp your feet",
       "chinese": "跺跺脚",
       "phoneticSegments": [{"text":"s","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Stomp-your-feet.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Stomp-your-feet.png",
+        "realistic": "/cards/tpr-l0/realistic/Stomp-your-feet.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -33,7 +42,10 @@
       "english": "Wave goodbye",
       "chinese": "挥手再见",
       "phoneticSegments": [{"text":"w","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Wave-goodbye.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Wave-goodbye.png",
+        "realistic": "/cards/tpr-l0/realistic/Wave-goodbye.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -41,7 +53,10 @@
       "english": "Blow a kiss",
       "chinese": "飞吻",
       "phoneticSegments": [{"text":"b","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Blow-a-kiss.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Blow-a-kiss.png",
+        "realistic": "/cards/tpr-l0/realistic/Blow-a-kiss.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -49,7 +64,10 @@
       "english": "Nod your head",
       "chinese": "点点头",
       "phoneticSegments": [{"text":"n","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Nod-your-head.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Nod-your-head.png",
+        "realistic": "/cards/tpr-l0/realistic/Nod-your-head.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -57,7 +75,10 @@
       "english": "Shake your head",
       "chinese": "摇摇头",
       "phoneticSegments": [{"text":"s","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Shake-your-head.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Shake-your-head.png",
+        "realistic": "/cards/tpr-l0/realistic/Shake-your-head.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -65,7 +86,10 @@
       "english": "Open your mouth",
       "chinese": "张开嘴巴",
       "phoneticSegments": [{"text":"o","category":"short-vowel"}],
-      "cardImageUrl": "/cards/tpr-l0/Open-your-mouth.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Open-your-mouth.png",
+        "realistic": "/cards/tpr-l0/realistic/Open-your-mouth.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -73,15 +97,21 @@
       "english": "Close your eyes",
       "chinese": "闭上眼睛",
       "phoneticSegments": [{"text":"c","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Close-your-eyes.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Close-your-eyes.png",
+        "realistic": "/cards/tpr-l0/realistic/Close-your-eyes.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
-      "id": "Touch-your-toes",
-      "english": "Touch your toes",
-      "chinese": "摸摸脚趾",
+      "id": "Close-your-hands",
+      "english": "Close your hands",
+      "chinese": "握握拳",
       "phoneticSegments": [{"text":"t","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Touch-your-toes.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Close-your-hands.png",
+        "realistic": "/cards/tpr-l0/realistic/Close-your-hands.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -89,7 +119,10 @@
       "english": "Pat your tummy",
       "chinese": "拍拍肚子",
       "phoneticSegments": [{"text":"p","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Pat-your-tummy.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Pat-your-tummy.png",
+        "realistic": "/cards/tpr-l0/realistic/Pat-your-tummy.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -97,7 +130,10 @@
       "english": "Wiggle your fingers",
       "chinese": "动动手指",
       "phoneticSegments": [{"text":"w","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Wiggle-your-fingers.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Wiggle-your-fingers.png",
+        "realistic": "/cards/tpr-l0/realistic/Wiggle-your-fingers.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -105,7 +141,10 @@
       "english": "Stand up",
       "chinese": "站起来",
       "phoneticSegments": [{"text":"s","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Stand-up.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Stand-up.png",
+        "realistic": "/cards/tpr-l0/realistic/Stand-up.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -113,7 +152,10 @@
       "english": "Sit down",
       "chinese": "坐下来",
       "phoneticSegments": [{"text":"s","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Sit-down.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Sit-down.png",
+        "realistic": "/cards/tpr-l0/realistic/Sit-down.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -121,7 +163,10 @@
       "english": "Turn around",
       "chinese": "转一圈",
       "phoneticSegments": [{"text":"t","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Turn-around.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Turn-around.png",
+        "realistic": "/cards/tpr-l0/realistic/Turn-around.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -129,7 +174,10 @@
       "english": "Jump up",
       "chinese": "跳一跳",
       "phoneticSegments": [{"text":"j","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Jump-up.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Jump-up.png",
+        "realistic": "/cards/tpr-l0/realistic/Jump-up.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -137,7 +185,10 @@
       "english": "Give me five",
       "chinese": "击个掌",
       "phoneticSegments": [{"text":"g","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Give-me-five.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Give-me-five.png",
+        "realistic": "/cards/tpr-l0/realistic/Give-me-five.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -145,7 +196,10 @@
       "english": "Hug yourself",
       "chinese": "抱抱自己",
       "phoneticSegments": [{"text":"h","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Hug-yourself.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Hug-yourself.png",
+        "realistic": "/cards/tpr-l0/realistic/Hug-yourself.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -153,7 +207,10 @@
       "english": "Point to the sky",
       "chinese": "指向天空",
       "phoneticSegments": [{"text":"p","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Point-to-the-sky.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Point-to-the-sky.png",
+        "realistic": "/cards/tpr-l0/realistic/Point-to-the-sky.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     },
     {
@@ -161,7 +218,10 @@
       "english": "Touch the ground",
       "chinese": "摸摸地面",
       "phoneticSegments": [{"text":"t","category":"consonant"}],
-      "cardImageUrl": "/cards/tpr-l0/Touch-the-ground.jpg",
+      "cardImageUrl": {
+        "cartoon": "/cards/tpr-l0/cartoon/Touch-the-ground.png",
+        "realistic": "/cards/tpr-l0/realistic/Touch-the-ground.png"
+      },
       "facePosition": { "x": 35, "y": 30, "width": 35 }
     }
   ]

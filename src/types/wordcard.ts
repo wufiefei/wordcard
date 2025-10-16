@@ -16,6 +16,9 @@ export interface PhoneticSegment {
   category: PhoneticCategory;
 }
 
+// 卡片模板类型
+export type CardTemplate = 'cartoon' | 'realistic';
+
 // 单词信息
 export interface Word {
   id: string;
@@ -24,7 +27,7 @@ export interface Word {
   phonetic?: string;           // 音标（预留）
   example?: string;            // 例句（预留）
   phoneticSegments: PhoneticSegment[];  // 自然拼读标注
-  cardImageUrl: string;        // 卡片背景图片地址
+  cardImageUrl: string | Record<CardTemplate, string>;  // 卡片背景图片地址（支持多模板）
   facePosition: {              // 人脸定位（相对位置）
     x: number;                 // x坐标百分比 0-100
     y: number;                 // y坐标百分比 0-100
@@ -128,6 +131,29 @@ export const CARD_SIZES: CardSizeType[] = [
     scenario: '超便携',
     cols: 2,
     rows: 5,
+  },
+];
+
+// 卡片模板配置
+export interface CardTemplateConfig {
+  id: CardTemplate;
+  name: string;
+  icon: string;
+  description: string;
+}
+
+export const CARD_TEMPLATES: CardTemplateConfig[] = [
+  {
+    id: 'cartoon',
+    name: '卡通手绘',
+    icon: '🎨',
+    description: '可爱卡通风格',
+  },
+  {
+    id: 'realistic',
+    name: '写实',
+    icon: '📷',
+    description: '真实照片风格',
   },
 ];
 

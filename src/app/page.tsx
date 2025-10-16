@@ -6,6 +6,8 @@ import Step1PhotoUpload from '@/components/Step1PhotoUpload';
 import Step2SelectWords from '@/components/Step2SelectWords';
 import Step3SelectSize from '@/components/Step3SelectSize';
 import { wordLibraries, getLibraryById } from '@/data/libraries';
+import { CardTemplate, CARD_SIZES } from '@/types/wordcard';
+import { exportToPDF, exportToImages } from '@/utils/exportUtils';
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -13,8 +15,13 @@ export default function Home() {
   const [selectedLibraryId, setSelectedLibraryId] = useState<string | null>(null);
   const [selectedCardSize, setSelectedCardSize] = useState<string>('standard');
   const [selectedWords, setSelectedWords] = useState<Set<string>>(new Set());
-  // 保存每个单词的自定义位置
+  const [selectedTemplate, setSelectedTemplate] = useState<CardTemplate>('cartoon');
+  // 保存每个单词的自定义位置和大小
   const [wordPositions, setWordPositions] = useState<Record<string, { x: number; y: number }>>({});
+  const [wordSizes, setWordSizes] = useState<Record<string, number>>({});
+  // 保存图片编辑状态
+  const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);
+  const [showEditor, setShowEditor] = useState(false);
 
   const handlePhotoUpload = (_file: File, previewUrl: string) => {
     setPhotoPreview(previewUrl);
@@ -53,12 +60,67 @@ export default function Home() {
     }));
   };
 
-  const handleExportPDF = () => {
-    alert('PDF导出功能开发中...');
+  const handleUpdateWordSize = (wordId: string, width: number) => {
+    setWordSizes(prev => ({
+      ...prev,
+      [wordId]: width
+    }));
   };
 
-  const handleExportImages = () => {
-    alert('图片导出功能开发中...');
+  const handleExportPDF = async () => {
+    if (!selectedLibraryId || selectedWords.size === 0) {
+      alert('请先选择要导出的单词卡片');
+      return;
+    }
+
+    const library = getLibraryById(selectedLibraryId);
+    if (!library) return;
+
+    const wordsToExport = library.words.filter(w => selectedWords.has(w.id));
+    const cardSize = CARD_SIZES.find(s => s.id === selectedCardSize);
+    if (!cardSize) return;
+
+    try {
+      await exportToPDF(
+        wordsToExport,
+        photoPreview,
+        wordPositions,
+        wordSizes,
+        selectedTemplate,
+        cardSize
+      );
+    } catch (error) {
+      console.error('导出PDF失败:', error);
+      alert('导出PDF失败，请重试');
+    }
+  };
+
+  const handleExportImages = async () => {
+    if (!selectedLibraryId || selectedWords.size === 0) {
+      alert('请先选择要导出的单词卡片');
+      return;
+    }
+
+    const library = getLibraryById(selectedLibraryId);
+    if (!library) return;
+
+    const wordsToExport = library.words.filter(w => selectedWords.has(w.id));
+    const cardSize = CARD_SIZES.find(s => s.id === selectedCardSize);
+    if (!cardSize) return;
+
+    try {
+      await exportToImages(
+        wordsToExport,
+        photoPreview,
+        wordPositions,
+        wordSizes,
+        selectedTemplate,
+        cardSize
+      );
+    } catch (error) {
+      console.error('导出图片失败:', error);
+      alert('导出图片失败，请重试');
+    }
   };
 
   return (
@@ -88,7 +150,11 @@ export default function Home() {
           {currentStep === 1 && (
             <Step1PhotoUpload
               photoPreview={photoPreview}
+              processedImageUrl={processedImageUrl}
+              showEditor={showEditor}
               onPhotoUpload={handlePhotoUpload}
+              onProcessedImageChange={setProcessedImageUrl}
+              onShowEditorChange={setShowEditor}
               onNext={() => setCurrentStep(2)}
             />
           )}
@@ -100,10 +166,13 @@ export default function Home() {
               selectedWords={selectedWords}
               photoPreview={photoPreview}
               wordPositions={wordPositions}
+              wordSizes={wordSizes}
               onSelectLibrary={handleSelectLibrary}
               onToggleWord={handleToggleWord}
               onToggleAll={handleToggleAll}
               onUpdateWordPosition={handleUpdateWordPosition}
+              onUpdateWordSize={handleUpdateWordSize}
+              onSelectTemplate={setSelectedTemplate}
               onNext={() => setCurrentStep(3)}
               onBack={() => setCurrentStep(1)}
             />
@@ -113,6 +182,12 @@ export default function Home() {
             <Step3SelectSize
               selectedSize={selectedCardSize}
               selectedWordsCount={selectedWords.size}
+              selectedWords={selectedWords}
+              libraries={wordLibraries}
+              selectedLibraryId={selectedLibraryId}
+              photoPreview={photoPreview}
+              wordPositions={wordPositions}
+              selectedTemplate={selectedTemplate}
               onSelectSize={setSelectedCardSize}
               onBack={() => setCurrentStep(2)}
               onExportPDF={handleExportPDF}

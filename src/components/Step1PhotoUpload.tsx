@@ -7,19 +7,25 @@ import ImageEditor from './ImageEditor';
 
 interface Step1PhotoUploadProps {
   photoPreview: string | null;
+  processedImageUrl: string | null;
+  showEditor: boolean;
   onPhotoUpload: (file: File, previewUrl: string) => void;
+  onProcessedImageChange: (url: string | null) => void;
+  onShowEditorChange: (show: boolean) => void;
   onNext: () => void;
 }
 
 export default function Step1PhotoUpload({
   photoPreview,
+  processedImageUrl,
+  showEditor,
   onPhotoUpload,
+  onProcessedImageChange,
+  onShowEditorChange,
   onNext,
 }: Step1PhotoUploadProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);
-  const [showEditor, setShowEditor] = useState(false);
   const [processProgress, setProcessProgress] = useState(0);
   // const [originalFile, setOriginalFile] = useState<File | null>(null);
 
@@ -52,7 +58,7 @@ export default function Step1PhotoUpload({
       if (resultBlob) {
         // 抠图成功，显示结果
         const resultUrl = URL.createObjectURL(resultBlob);
-        setProcessedImageUrl(resultUrl);
+        onProcessedImageChange(resultUrl);
         
         // 更新上传的文件为抠图后的版本
         const processedFile = new File([resultBlob], 'processed.png', { type: 'image/png' });
@@ -62,7 +68,7 @@ export default function Step1PhotoUpload({
       } else {
         // 抠图失败，使用原图
         console.warn('⚠️ 抠图失败，使用原图');
-        setProcessedImageUrl(originalUrl);
+        onProcessedImageChange(originalUrl);
       }
       
       setProcessProgress(100);
@@ -71,7 +77,7 @@ export default function Step1PhotoUpload({
       console.error('处理图片失败:', error);
       // 降级：使用原图
       const originalUrl = URL.createObjectURL(file);
-      setProcessedImageUrl(originalUrl);
+      onProcessedImageChange(originalUrl);
       setProcessProgress(100);
     } finally {
       setIsProcessing(false);
@@ -98,7 +104,7 @@ export default function Step1PhotoUpload({
 
   const handleEditComplete = (editedBlob: Blob) => {
     const editedUrl = URL.createObjectURL(editedBlob);
-    setProcessedImageUrl(editedUrl);
+    onProcessedImageChange(editedUrl);
     // 更新上传的图片
     const editedFile = new File([editedBlob], 'edited.png', { type: 'image/png' });
     onPhotoUpload(editedFile, editedUrl);
@@ -210,7 +216,7 @@ export default function Step1PhotoUpload({
               </h2>
               {processedImageUrl && (
                 <button
-                  onClick={() => setShowEditor(true)}
+                  onClick={() => onShowEditorChange(true)}
                   className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all shadow-md text-sm font-medium"
                 >
                   🖌️ 编辑图片
@@ -266,7 +272,7 @@ export default function Step1PhotoUpload({
         <ImageEditor
           imageUrl={processedImageUrl}
           onSave={handleEditComplete}
-          onClose={() => setShowEditor(false)}
+          onClose={() => onShowEditorChange(false)}
         />
       )}
 

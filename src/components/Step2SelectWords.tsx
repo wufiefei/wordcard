@@ -1,6 +1,6 @@
 'use client';
 
-import { WordLibrary, Word } from '@/types/wordcard';
+import { WordLibrary, Word, CardTemplate, CARD_TEMPLATES } from '@/types/wordcard';
 import { useState } from 'react';
 import Image from 'next/image';
 import DraggableCardPreview from './DraggableCardPreview';
@@ -11,12 +11,30 @@ interface Step2SelectWordsProps {
   selectedWords: Set<string>;
   photoPreview: string | null;
   wordPositions: Record<string, { x: number; y: number }>;
+  wordSizes?: Record<string, number>;
   onSelectLibrary: (libraryId: string) => void;
   onToggleWord: (wordId: string) => void;
   onToggleAll: () => void;
   onUpdateWordPosition: (wordId: string, x: number, y: number) => void;
+  onUpdateWordSize?: (wordId: string, width: number) => void;
+  onSelectTemplate: (template: CardTemplate) => void;
   onNext: () => void;
   onBack: () => void;
+}
+
+// 获取卡片图片URL的辅助函数
+function getCardImageUrl(word: Word, template: CardTemplate): string {
+  if (!word.cardImageUrl) return '';
+  
+  if (typeof word.cardImageUrl === 'string') {
+    return word.cardImageUrl;
+  }
+  
+  if (typeof word.cardImageUrl === 'object' && word.cardImageUrl !== null) {
+    return word.cardImageUrl[template] || word.cardImageUrl['cartoon'] || '';
+  }
+  
+  return '';
 }
 
 export default function Step2SelectWords({
@@ -25,14 +43,23 @@ export default function Step2SelectWords({
   selectedWords,
   photoPreview,
   wordPositions,
+  wordSizes,
   onSelectLibrary,
   onToggleWord,
   onToggleAll,
   onUpdateWordPosition,
+  onUpdateWordSize,
+  onSelectTemplate,
   onNext,
   onBack,
 }: Step2SelectWordsProps) {
   const [previewWord, setPreviewWord] = useState<Word | null>(null);
+  const [selectedTemplate, setSelectedTemplate] = useState<CardTemplate>('cartoon');
+
+  const handleTemplateChange = (template: CardTemplate) => {
+    setSelectedTemplate(template);
+    onSelectTemplate(template);
+  };
   
   const currentLibrary = libraries.find(lib => lib.id === selectedLibraryId);
   const allSelected = currentLibrary && selectedWords.size === currentLibrary.words.length;
@@ -40,8 +67,9 @@ export default function Step2SelectWords({
   return (
     <div className="flex flex-col h-full">
       <div className="flex-1 flex flex-col lg:flex-row gap-6 pb-32 lg:pb-6">
-        {/* 左侧：单词库选择 */}
+        {/* 左侧：单词库选择 + 模板选择 */}
         <div className="w-full lg:w-1/3 space-y-4">
+          {/* 单词库选择 */}
           <div className="bg-white rounded-2xl shadow-lg p-6">
             <h2 className="text-xl font-semibold text-purple-600 mb-4 flex items-center gap-2">
               <span>📚</span>
@@ -66,6 +94,39 @@ export default function Step2SelectWords({
                       <div className="text-xs opacity-80">{library.count}个单词</div>
                     </div>
                     {selectedLibraryId === library.id && (
+                      <div className="text-lg">✓</div>
+                    )}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* 模板选择 */}
+          <div className="bg-white rounded-2xl shadow-lg p-6">
+            <h2 className="text-xl font-semibold text-blue-600 mb-4 flex items-center gap-2">
+              <span>🎭</span>
+              <span>选择模板</span>
+            </h2>
+
+            <div className="space-y-2">
+              {CARD_TEMPLATES.map((template) => (
+                <button
+                  key={template.id}
+                  onClick={() => handleTemplateChange(template.id)}
+                  className={`w-full p-3 rounded-xl transition-all text-left ${
+                    selectedTemplate === template.id
+                      ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-md'
+                      : 'bg-gray-50 hover:bg-gray-100 text-gray-700'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="text-2xl">{template.icon}</div>
+                    <div className="flex-1">
+                      <div className="font-medium">{template.name}</div>
+                      <div className="text-xs opacity-80">{template.description}</div>
+                    </div>
+                    {selectedTemplate === template.id && (
                       <div className="text-lg">✓</div>
                     )}
                   </div>
@@ -148,15 +209,34 @@ export default function Step2SelectWords({
                       {/* 卡片预览 */}
                       <div
                         onClick={() => setPreviewWord(word)}
-                        className="aspect-square bg-gradient-to-br from-yellow-100 to-pink-100 flex items-center justify-center relative"
+                        className="aspect-square bg-gradient-to-br from-yellow-100 to-pink-100 flex items-center justify-center relative overflow-hidden"
                       >
-                        <div className="text-4xl">🎨</div>
+                        {/* 背景图片 */}
+                        {(() => {
+                          const imageUrl = getCardImageUrl(word, selectedTemplate);
+                          if (imageUrl) {
+                            return (
+                              <Image
+                                src={imageUrl}
+                                alt={word.english}
+                                fill
+                                className="object-cover"
+                                onError={(e) => {
+                                  // 图片加载失败时显示默认图标
+                                  (e.target as HTMLImageElement).style.display = 'none';
+                                }}
+                              />
+                            );
+                          }
+                          return <div className="text-4xl">🎨</div>;
+                        })()}
+                        
                         {/* 小头像示意 - 使用原始尺寸 */}
                         {photoPreview && (() => {
                           const position = wordPositions[word.id] || { x: word.facePosition.x, y: word.facePosition.y };
                           return (
                             <div 
-                              className="absolute overflow-hidden"
+                              className="absolute overflow-hidden z-10"
                               style={{
                                 left: `${position.x}%`,
                                 top: `${position.y}%`,
@@ -249,9 +329,14 @@ export default function Step2SelectWords({
           word={previewWord}
           photoPreview={photoPreview}
           currentPosition={wordPositions[previewWord.id]}
+          currentWidth={wordSizes?.[previewWord.id]}
+          selectedTemplate={selectedTemplate}
           onClose={() => setPreviewWord(null)}
           onPositionChange={(x, y) => {
             onUpdateWordPosition(previewWord.id, x, y);
+          }}
+          onSizeChange={(width) => {
+            onUpdateWordSize?.(previewWord.id, width);
           }}
         />
       )}
