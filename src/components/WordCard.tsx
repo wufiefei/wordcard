@@ -31,12 +31,12 @@ function getCardLayout(sizeId: string) {
   switch (sizeId) {
     case 'extra-large': // 超大卡 148×105mm (横版)
       return {
-        imageSize: '80mm',
-        padding: '10mm',
+        imageSize: '143mm',
+        padding: '8mm',
         imageGap: '8mm',
         textGap: '3mm',
-        englishSize: '18pt',
-        chineseSize: '14pt',
+        englishSize: '50pt',
+        chineseSize: '30pt',
         direction: 'vertical' as const, // 图片上，文字下
       };
     case 'large': // 大卡 100×138mm (竖版)
@@ -127,7 +127,7 @@ export default function WordCard({
     // 横向布局：图片左，文字右
     return (
       <div 
-        className="w-full h-full bg-white flex items-center border-2 border-black"
+        className="word-card w-full h-full bg-white flex items-center border-2 border-black"
         style={paddingStyle}
       >
         {/* 图片区域 - 左侧 */}
@@ -210,7 +210,7 @@ export default function WordCard({
     // 纵向布局：图片上，文字下
     return (
       <div 
-        className="w-full h-full bg-white flex flex-col items-center border-2 border-black"
+        className="word-card w-full h-full bg-white flex flex-col items-center border-2 border-black rounded-lg"
         style={paddingStyle}
       >
         {/* 图片区域 - 上方 */}

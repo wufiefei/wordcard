@@ -187,41 +187,54 @@ export default function Step3SelectSize({
                 {/* A4纸张背景 */}
                 <div className="absolute inset-0 bg-white" />
 
-                {/* 卡片网格 */}
-                {currentSizeConfig && (
-                  <div className="absolute inset-0 grid" style={{
-                    gridTemplateColumns: `repeat(${currentSizeConfig.cols}, 1fr)`,
-                    gridTemplateRows: `repeat(${currentSizeConfig.rows}, 1fr)`,
-                    padding: '5mm',
-                    gap: '2mm',
-                  }}>
-                    {Array.from({ length: currentSizeConfig.cardsPerSheet }).map((_, idx) => {
-                      const globalIndex = (currentPage - 1) * currentSizeConfig.cardsPerSheet + idx;
-                      const word = selectedWordsList[globalIndex];
-                      
-                      return (
-                        <div
-                          key={idx}
-                          className="relative"
-                        >
-                          {word ? (
-                            <WordCard
-                              word={word}
-                              photoPreview={photoPreview}
-                              selectedTemplate={selectedTemplate}
-                              wordPosition={wordPositions[word.id]}
-                              cardSize={currentSizeConfig}
-                            />
-                          ) : (
-                            <div className="w-full h-full bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400 text-xs">
-                              空白
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+                {/* 卡片网格 - 使用cutSize精确定位 */}
+                {currentSizeConfig && (() => {
+                  // 解析cutSize获取卡片的实际尺寸
+                  const [cardWidth, cardHeight] = currentSizeConfig.cutSize.split('×').map(s => parseInt(s));
+                  const padding = 5; // A4边距 5mm
+                  const gap = 2; // 卡片间距 2mm
+
+                  return (
+                    <div className="absolute inset-0 grid" style={{
+                      gridTemplateColumns: `repeat(${currentSizeConfig.cols}, ${cardWidth}mm)`,
+                      gridTemplateRows: `repeat(${currentSizeConfig.rows}, ${cardHeight}mm)`,
+                      padding: `${padding}mm`,
+                      gap: `${gap}mm`,
+                      justifyContent: 'center',
+                      alignContent: 'center',
+                    }}>
+                      {Array.from({ length: currentSizeConfig.cardsPerSheet }).map((_, idx) => {
+                        const globalIndex = (currentPage - 1) * currentSizeConfig.cardsPerSheet + idx;
+                        const word = selectedWordsList[globalIndex];
+
+                        return (
+                          <div
+                            key={idx}
+                            className="relative"
+                            style={{
+                              width: `${cardWidth}mm`,
+                              height: `${cardHeight}mm`,
+                            }}
+                          >
+                            {word ? (
+                              <WordCard
+                                word={word}
+                                photoPreview={photoPreview}
+                                selectedTemplate={selectedTemplate}
+                                wordPosition={wordPositions[word.id]}
+                                cardSize={currentSizeConfig}
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400 text-xs">
+                                空白
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })()}
 
                 {/* 页面标识 */}
                 <div className="absolute bottom-2 right-2 text-xs text-gray-400 bg-white px-2 py-1 rounded">
