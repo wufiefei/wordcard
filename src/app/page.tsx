@@ -12,13 +12,14 @@ import { exportToPDF, exportToImages } from '@/utils/exportUtils';
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
-  const [selectedLibraryId, setSelectedLibraryId] = useState<string | null>(null);
+  const [selectedLibraryId, setSelectedLibraryId] = useState<string | null>('fruits');
   const [selectedCardSize, setSelectedCardSize] = useState<string>('standard');
   const [selectedWords, setSelectedWords] = useState<Set<string>>(new Set());
   const [selectedTemplate, setSelectedTemplate] = useState<CardTemplate>('cartoon');
-  // 保存每个单词的自定义位置和大小
+  // 保存每个单词的自定义位置、大小和旋转角度
   const [wordPositions, setWordPositions] = useState<Record<string, { x: number; y: number }>>({});
   const [wordSizes, setWordSizes] = useState<Record<string, number>>({});
+  const [wordRotations, setWordRotations] = useState<Record<string, number>>({});
   // 保存图片编辑状态
   const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);
   const [showEditor, setShowEditor] = useState(false);
@@ -64,6 +65,13 @@ export default function Home() {
     setWordSizes(prev => ({
       ...prev,
       [wordId]: width
+    }));
+  };
+
+  const handleUpdateWordRotation = (wordId: string, rotation: number) => {
+    setWordRotations(prev => ({
+      ...prev,
+      [wordId]: rotation
     }));
   };
 
@@ -167,11 +175,13 @@ export default function Home() {
               photoPreview={photoPreview}
               wordPositions={wordPositions}
               wordSizes={wordSizes}
+              wordRotations={wordRotations}
               onSelectLibrary={handleSelectLibrary}
               onToggleWord={handleToggleWord}
               onToggleAll={handleToggleAll}
               onUpdateWordPosition={handleUpdateWordPosition}
               onUpdateWordSize={handleUpdateWordSize}
+              onUpdateWordRotation={handleUpdateWordRotation}
               onSelectTemplate={setSelectedTemplate}
               onNext={() => setCurrentStep(3)}
               onBack={() => setCurrentStep(1)}

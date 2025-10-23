@@ -13,6 +13,7 @@ interface DraggableCardPreviewProps {
   onClose: () => void;
   onPositionChange?: (x: number, y: number) => void;
   onSizeChange?: (width: number) => void;
+  onRotationChange?: (rotation: number) => void;
 }
 
 // 获取卡片图片URL的辅助函数
@@ -39,14 +40,17 @@ export default function DraggableCardPreview({
   onClose,
   onPositionChange,
   onSizeChange,
+  onRotationChange,
 }: DraggableCardPreviewProps) {
   const [position, setPosition] = useState({
     x: currentPosition?.x ?? word.facePosition.x,
     y: currentPosition?.y ?? word.facePosition.y,
   });
   const [avatarWidth, setAvatarWidth] = useState(currentWidth ?? word.facePosition.width);
+  const [avatarRotation, setAvatarRotation] = useState(word.facePosition.rotation || 0);
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
+  const [isRotating, setIsRotating] = useState(false);
   const [showCorners, setShowCorners] = useState(false);
   const [activeCorner, setActiveCorner] = useState<'tl' | 'tr' | 'bl' | 'br' | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -57,12 +61,20 @@ export default function DraggableCardPreview({
     initialPosition: { x: number; y: number };
     corner: 'tl' | 'tr' | 'bl' | 'br';
   } | null>(null);
+  const rotateStartRef = useRef<{
+    x: number;
+    y: number;
+    initialRotation: number;
+    avatarCenter: { x: number; y: number };
+  } | null>(null);
 
   // 拖动头像位置
   const handleMouseDown = (e: React.MouseEvent) => {
     if ((e.target as HTMLElement).classList.contains('resize-corner')) return;
+    if ((e.target as HTMLElement).classList.contains('rotate-button')) return;
     e.preventDefault();
     e.stopPropagation();
+    
     setIsDragging(true);
   };
 
@@ -73,17 +85,34 @@ export default function DraggableCardPreview({
     const rect = card.getBoundingClientRect();
 
     if (isDragging) {
-      // 拖动位置
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      // 拖动位置 - 计算鼠标位置对应的左上角坐标
+      const mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+      const mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      // 鼠标位置减去头像中心偏移，得到左上角坐标
+      const x = mouseX - avatarWidth / 2;
+      const y = mouseY - avatarWidth / 2;
 
-      const clampedX = Math.max(avatarWidth / 2, Math.min(100 - avatarWidth / 2, x));
-      const clampedY = Math.max(avatarWidth / 2, Math.min(100 - avatarWidth / 2, y));
+      // 限制在卡片范围内（左上角不能超出边界）
+      const clampedX = Math.max(0, Math.min(100 - avatarWidth, x));
+      const clampedY = Math.max(0, Math.min(100 - avatarWidth, y));
 
       setPosition({ x: clampedX, y: clampedY });
       if (onPositionChange) {
         onPositionChange(clampedX, clampedY);
       }
+    } else if (isRotating && rotateStartRef.current) {
+      // 旋转头像 - 直接使用鼠标和头像中心的连线角度
+      const { avatarCenter } = rotateStartRef.current;
+      
+      // 计算当前鼠标位置相对于头像中心的角度（以水平向右为0度，顺时针为正）
+      const angleRad = Math.atan2(e.clientY - avatarCenter.y, e.clientX - avatarCenter.x);
+      const angleDeg = angleRad * (180 / Math.PI);
+      
+      // 将角度标准化到0-360度范围
+      const normalizedRotation = ((angleDeg % 360) + 360) % 360;
+      
+      setAvatarRotation(normalizedRotation);
     } else if (isResizing && resizeStartRef.current) {
       // 缩放大小 - 优化算法，使其更跟随鼠标
       const corner = resizeStartRef.current.corner;
@@ -117,8 +146,10 @@ export default function DraggableCardPreview({
   const handleMouseUp = () => {
     setIsDragging(false);
     setIsResizing(false);
+    setIsRotating(false);
     setActiveCorner(null);
     resizeStartRef.current = null;
+    rotateStartRef.current = null;
   };
 
   // 点击头像显示/隐藏四个角
@@ -178,6 +209,9 @@ export default function DraggableCardPreview({
     if (onSizeChange) {
       onSizeChange(avatarWidth);
     }
+    if (onRotationChange) {
+      onRotationChange(avatarRotation);
+    }
     onClose();
   };
 
@@ -200,83 +234,149 @@ export default function DraggableCardPreview({
               ref={cardRef}
               className="aspect-square bg-gradient-to-br from-yellow-100 via-pink-100 to-purple-100 relative select-none"
             >
-              {/* Background Image */}
+              {/* Background Image and Avatar - 头像始终在上层 */}
               {(() => {
-                const imageUrl = getCardImageUrl(word, selectedTemplate);
-                if (imageUrl) {
-                  return (
-                    <Image
-                      src={imageUrl}
-                      alt={word.english}
-                      fill
-                      className="object-cover"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = 'none';
-                      }}
-                    />
-                  );
-                }
                 return (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl">🎨</div>
-                  </div>
-                );
-              })()}
+                  <>
+                    {/* Background Image */}
+                    {(() => {
+                      const imageUrl = getCardImageUrl(word, selectedTemplate);
+                      if (imageUrl) {
+                        return (
+                          <div className="absolute inset-0" style={{ zIndex: 0 }}>
+                            <Image
+                              src={imageUrl}
+                              alt={word.english}
+                              fill
+                              className="object-cover"
+                              onError={(e) => {
+                                (e.target as HTMLImageElement).style.display = 'none';
+                              }}
+                            />
+                          </div>
+                        );
+                      }
+                      return (
+                        <div className="absolute inset-0 flex items-center justify-center" style={{ zIndex: 0 }}>
+                          <div className="text-6xl">🎨</div>
+                        </div>
+                      );
+                    })()}
 
-              {/* Draggable avatar */}
-              {photoPreview && (
-                <div
-                  className="absolute overflow-hidden"
-                  style={{
-                    left: `${position.x}%`,
-                    top: `${position.y}%`,
-                    width: `${avatarWidth}%`,
-                    aspectRatio: '1',
-                    transform: 'translate(-50%, -50%)',
-                    cursor: isDragging ? 'grabbing' : 'grab',
-                    transition: isDragging || isResizing ? 'none' : 'all 0.2s ease',
-                  }}
-                  onMouseDown={handleMouseDown}
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
-                  onClick={handleAvatarClick}
-                >
-                  <Image
-                    src={photoPreview}
-                    alt="宝宝照片"
-                    fill
-                    className="object-cover pointer-events-none"
-                    draggable={false}
-                  />
+                    {/* Draggable avatar - 编辑模式下始终在最上层 */}
+                    {photoPreview && (
+                      <div
+                        className="absolute overflow-visible rounded-full"
+                        style={{
+                          left: `${position.x}%`,
+                          top: `${position.y}%`,
+                          width: `${avatarWidth}%`,
+                          aspectRatio: '1',
+                          transform: `rotate(${avatarRotation}deg)`,
+                          transformOrigin: 'center center',
+                          cursor: isDragging ? 'grabbing' : 'grab',
+                          transition: isDragging || isResizing ? 'none' : 'all 0.2s ease',
+                          zIndex: 20, // 头像始终在最上层
+                        }}
+                        onMouseDown={handleMouseDown}
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                        onClick={handleAvatarClick}
+                      >
+                        {/* 图片容器 - 保持圆形裁剪 */}
+                        <div className="w-full h-full overflow-hidden rounded-full">
+                          <Image
+                            src={photoPreview}
+                            alt="宝宝照片"
+                            fill
+                            className="object-contain pointer-events-none"
+                            draggable={false}
+                          />
+                        </div>
 
-                  {/* 四个缩放角 */}
+                  {/* 四个缩放角 - 调整位置以适应圆形头像 */}
                   {showCorners && (
                     <>
-                      {/* 左上角 */}
+                      {/* 左上角 - 移动到圆形边界外 */}
                       <div
-                        className="resize-corner absolute -top-2 -left-2 w-5 h-5 bg-blue-500 rounded-full cursor-nwse-resize border-2 border-white shadow-lg z-10 hover:w-6 hover:h-6 hover:bg-blue-600 transition-all"
+                        className="resize-corner absolute w-5 h-5 bg-blue-500 rounded-full cursor-nwse-resize border-2 border-white shadow-lg z-20 hover:w-6 hover:h-6 hover:bg-blue-600 transition-all"
+                        style={{
+                          top: '-8px',
+                          left: '-8px',
+                        }}
                         onMouseDown={handleResizeStart('tl')}
                       />
-                      {/* 右上角 */}
+                      {/* 右上角 - 移动到圆形边界外 */}
                       <div
-                        className="resize-corner absolute -top-2 -right-2 w-5 h-5 bg-blue-500 rounded-full cursor-nesw-resize border-2 border-white shadow-lg z-10 hover:w-6 hover:h-6 hover:bg-blue-600 transition-all"
+                        className="resize-corner absolute w-5 h-5 bg-blue-500 rounded-full cursor-nesw-resize border-2 border-white shadow-lg z-20 hover:w-6 hover:h-6 hover:bg-blue-600 transition-all"
+                        style={{
+                          top: '-8px',
+                          right: '-8px',
+                        }}
                         onMouseDown={handleResizeStart('tr')}
                       />
-                      {/* 左下角 */}
+                      {/* 左下角 - 移动到圆形边界外 */}
                       <div
-                        className="resize-corner absolute -bottom-2 -left-2 w-5 h-5 bg-blue-500 rounded-full cursor-nesw-resize border-2 border-white shadow-lg z-10 hover:w-6 hover:h-6 hover:bg-blue-600 transition-all"
+                        className="resize-corner absolute w-5 h-5 bg-blue-500 rounded-full cursor-nesw-resize border-2 border-white shadow-lg z-20 hover:w-6 hover:h-6 hover:bg-blue-600 transition-all"
+                        style={{
+                          bottom: '-8px',
+                          left: '-8px',
+                        }}
                         onMouseDown={handleResizeStart('bl')}
                       />
-                      {/* 右下角 */}
+                      {/* 右下角 - 移动到圆形边界外 */}
                       <div
-                        className="resize-corner absolute -bottom-2 -right-2 w-5 h-5 bg-blue-500 rounded-full cursor-nwse-resize border-2 border-white shadow-lg z-10 hover:w-6 hover:h-6 hover:bg-blue-600 transition-all"
+                        className="resize-corner absolute w-5 h-5 bg-blue-500 rounded-full cursor-nwse-resize border-2 border-white shadow-lg z-20 hover:w-6 hover:h-6 hover:bg-blue-600 transition-all"
+                        style={{
+                          bottom: '-8px',
+                          right: '-8px',
+                        }}
                         onMouseDown={handleResizeStart('br')}
                       />
                     </>
                   )}
-                </div>
-              )}
+                  
+                  {/* 旋转按钮 */}
+                  {showCorners && (
+                    <div
+                      className="rotate-button absolute w-6 h-6 bg-green-500 rounded-full cursor-grab border-2 border-white shadow-lg z-20 hover:w-7 hover:h-7 hover:bg-green-600 transition-all flex items-center justify-center"
+                      style={{
+                        top: '-12px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                      }}
+                      onMouseDown={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        if (!cardRef.current) return;
+                        const card = cardRef.current;
+                        const rect = card.getBoundingClientRect();
+                        
+                        // 计算头像中心在屏幕上的位置（position现在表示左上角）
+                        const avatarCenterX = rect.left + (rect.width * (position.x + avatarWidth / 2)) / 100;
+                        const avatarCenterY = rect.top + (rect.height * (position.y + avatarWidth / 2)) / 100;
+                        
+                        rotateStartRef.current = {
+                          x: e.clientX,
+                          y: e.clientY,
+                          initialRotation: avatarRotation,
+                          avatarCenter: { x: avatarCenterX, y: avatarCenterY }
+                        };
+                        
+                        setIsRotating(true);
+                      }}
+                      title="按住拖拽旋转"
+                    >
+                      <span className="text-white text-xs font-bold">↻</span>
+                    </div>
+                  )}
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
             </div>
 
             {/* Text information - inside the card */}
@@ -292,7 +392,8 @@ export default function DraggableCardPreview({
 
           {/* 操作提示 */}
           <div className="mt-4 text-center text-xs text-gray-500">
-            💡 按住头像可以拖动位置，点击头像显示四个角，拖动角可以缩放大小
+            💡 按住头像可以拖动位置，点击头像显示四个角，拖动角可以缩放大小<br/>
+            🔄 点击头像后会出现绿色旋转按钮，按住拖拽可以旋转头像
           </div>
 
           {/* 操作按钮 */}

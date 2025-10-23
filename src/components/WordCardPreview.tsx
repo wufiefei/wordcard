@@ -58,31 +58,40 @@ export default function WordCardPreview({
         {/* 卡片内容 */}
         <div className="p-6">
           <div className="aspect-square bg-gradient-to-br from-yellow-100 via-pink-100 to-purple-100 rounded-xl overflow-hidden shadow-lg relative">
-            {/* 背景图片占位 */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-6xl">🎨</div>
-            </div>
+            {/* 背景图片和头像 - 头像始终在上层 */}
+            {(() => {
+              return (
+                <>
+                  {/* 背景图片占位 */}
+                  <div className="absolute inset-0 flex items-center justify-center" style={{ zIndex: 0 }}>
+                    <div className="text-6xl">🎨</div>
+                  </div>
 
-            {/* 人脸位置预览 */}
-            {photoPreview && (
-              <div
-                className="absolute rounded-full overflow-hidden shadow-lg border-4 border-white"
-                style={{
-                  left: `${word.facePosition.x}%`,
-                  top: `${word.facePosition.y}%`,
-                  width: `${word.facePosition.width}%`,
-                  aspectRatio: '1',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                <Image
-                  src={photoPreview}
-                  alt="宝宝照片"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
+                  {/* 人脸位置预览 - 支持rotation */}
+                  {photoPreview && (
+                    <div
+                      className="absolute rounded-full overflow-hidden shadow-lg border-4 border-white"
+                      style={{
+                        left: `${word.facePosition.x}%`,
+                        top: `${word.facePosition.y}%`,
+                        width: `${word.facePosition.width}%`,
+                        aspectRatio: '1',
+                        transform: `rotate(${word.facePosition.rotation || 0}deg)`,
+                        transformOrigin: 'center center',
+                        zIndex: 10, // 头像始终在上层
+                      }}
+                    >
+                      <Image
+                        src={photoPreview}
+                        alt="宝宝照片"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  )}
+                </>
+              );
+            })()}
 
             {/* 单词文本 */}
             <div className="absolute bottom-4 left-0 right-0 text-center">

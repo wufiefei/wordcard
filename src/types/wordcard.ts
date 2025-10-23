@@ -19,6 +19,9 @@ export interface PhoneticSegment {
 // 卡片模板类型
 export type CardTemplate = 'cartoon' | 'realistic';
 
+// 图层顺序类型
+export type LayerOrder = 'top' | 'bottom';
+
 // 单词信息
 export interface Word {
   id: string;
@@ -32,6 +35,8 @@ export interface Word {
     x: number;                 // x坐标百分比 0-100
     y: number;                 // y坐标百分比 0-100
     width: number;             // 宽度百分比 0-100
+    rotation?: number;         // 旋转角度（度数，可选，默认0）
+    layer?: LayerOrder;        // 图层顺序（可选，默认'bottom'）top=背景在上/头像在下，bottom=头像在上/背景在下
   };
 }
 

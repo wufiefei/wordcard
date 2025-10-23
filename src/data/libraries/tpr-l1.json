@@ -8,221 +8,441 @@
       "id": "Pick-up-the-ball",
       "english": "Pick up the ball",
       "chinese": "捡起小球",
-      "phoneticSegments": [{"text":"w","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "w",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Pick-up-the-ball.png",
         "realistic": "/cards/tpr-l1/realistic/Pick-up-the-ball.png"
       },
-      "facePosition": { "x": 30, "y": 20, "width": 40 }
+      "facePosition": {
+        "x": 30,
+        "y": 20,
+        "width": 40,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Hop-like-a-bunny",
       "english": "Hop like a bunny",
       "chinese": "像兔子一样跳",
-      "phoneticSegments": [{"text":"h","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "h",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Hop-like-a-bunny.png",
         "realistic": "/cards/tpr-l1/realistic/Hop-like-a-bunny.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Put-the-toy-in-the-box",
       "english": "Put the toy in the box",
       "chinese": "把玩具放进盒子里",
-      "phoneticSegments": [{"text":"f","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "f",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Put-the-toy-in-the-box.png",
         "realistic": "/cards/tpr-l1/realistic/Put-the-toy-in-the-box.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Shake-the-rattle",
       "english": "Shake the rattle",
       "chinese": "摇摇拨浪鼓",
-      "phoneticSegments": [{"text":"c","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "c",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Shake-the-rattle.png",
         "realistic": "/cards/tpr-l1/realistic/Shake-the-rattle.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Walk-to-mommy",
       "english": "Walk to mommy",
       "chinese": "走向妈妈",
-      "phoneticSegments": [{"text":"r","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "r",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Walk-to-mommy.png",
         "realistic": "/cards/tpr-l1/realistic/Walk-to-mommy.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Tiptoe-quietly",
       "english": "Tiptoe quietly",
       "chinese": "踮起脚尖轻轻走",
-      "phoneticSegments": [{"text":"t","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "t",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Tiptoe-quietly.png",
         "realistic": "/cards/tpr-l1/realistic/Tiptoe-quietly.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "March-around",
       "english": "March around",
       "chinese": "踏步走一圈",
-      "phoneticSegments": [{"text":"m","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "m",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/March-around.png",
         "realistic": "/cards/tpr-l1/realistic/March-around.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Spin-in-a-circle",
       "english": "Spin in a circle",
       "chinese": "转圈圈",
-      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "s",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Spin-in-a-circle.png",
         "realistic": "/cards/tpr-l1/realistic/Spin-in-a-circle.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Reach-for-the-stars",
       "english": "Reach for the stars",
       "chinese": "伸手摘星星",
-      "phoneticSegments": [{"text":"r","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "r",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Reach-for-the-stars.png",
         "realistic": "/cards/tpr-l1/realistic/Reach-for-the-stars.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Squat-down-low",
       "english": "Squat down low",
       "chinese": "蹲得低低的",
-      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "s",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Squat-down-low.png",
         "realistic": "/cards/tpr-l1/realistic/Squat-down-low.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Balance-on-one-foot",
       "english": "Balance on one foot",
       "chinese": "单脚站立",
-      "phoneticSegments": [{"text":"b","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "b",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Balance-on-one-foot.png",
         "realistic": "/cards/tpr-l1/realistic/Balance-on-one-foot.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Stack-the-blocks",
       "english": "Stack the blocks",
       "chinese": "叠积木",
-      "phoneticSegments": [{"text":"w","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "w",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Stack-the-blocks.png",
         "realistic": "/cards/tpr-l1/realistic/Stack-the-blocks.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Turn-the-page-of-the-book",
       "english": "Turn the page of the book",
       "chinese": "翻书",
-      "phoneticSegments": [{"text":"s","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "s",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Turn-the-page-of-the-book.png",
         "realistic": "/cards/tpr-l1/realistic/Turn-the-page-of-the-book.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Roll-on-the-floor",
       "english": "Roll on the floor",
       "chinese": "在地上打滚",
-      "phoneticSegments": [{"text":"r","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "r",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Roll-on-the-floor.png",
         "realistic": "/cards/tpr-l1/realistic/Roll-on-the-floor.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Put-on-the-hat",
       "english": "Put on the hat",
       "chinese": "戴上帽子",
-      "phoneticSegments": [{"text":"c","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "c",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Put-on-the-hat.png",
         "realistic": "/cards/tpr-l1/realistic/Put-on-the-hat.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Take-off-the-socks",
       "english": "Take off the socks",
       "chinese": "脱掉袜子",
-      "phoneticSegments": [{"text":"t","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "t",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Take-off-the-socks.png",
         "realistic": "/cards/tpr-l1/realistic/Take-off-the-socks.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Make-yourself-small",
       "english": "Make yourself small",
       "chinese": "让自己变小",
-      "phoneticSegments": [{"text":"m","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "m",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Make-yourself-small.png",
         "realistic": "/cards/tpr-l1/realistic/Make-yourself-small.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Make-yourself-tall",
       "english": "Make yourself tall",
       "chinese": "让自己变高",
-      "phoneticSegments": [{"text":"m","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "m",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Make-yourself-tall.png",
         "realistic": "/cards/tpr-l1/realistic/Make-yourself-tall.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Freeze-like-a-statue",
       "english": "Freeze like a statue",
       "chinese": "像雕像一样定住",
-      "phoneticSegments": [{"text":"f","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "f",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Freeze-like-a-statue.png",
         "realistic": "/cards/tpr-l1/realistic/Freeze-like-a-statue.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "Dance-and-move",
       "english": "Dance and move",
       "chinese": "跳舞动起来",
-      "phoneticSegments": [{"text":"d","category":"consonant"}],
+      "phoneticSegments": [
+        {
+          "text": "d",
+          "category": "consonant"
+        }
+      ],
       "cardImageUrl": {
         "cartoon": "/cards/tpr-l1/cartoon/Dance-and-move.png",
         "realistic": "/cards/tpr-l1/realistic/Dance-and-move.png"
       },
-      "facePosition": { "x": 35, "y": 25, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 25,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     }
   ]
 }

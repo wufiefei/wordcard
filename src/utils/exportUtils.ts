@@ -263,14 +263,36 @@ async function drawAvatar(
   try {
     const avatarImg = await loadImage(photoUrl);
     const avatarSize = (imageSize * wordWidth) / 100;
-    const avatarX = imageX + (imageSize * wordPosition.x) / 100 - avatarSize / 2;
-    const avatarY = imageY + (imageSize * wordPosition.y) / 100 - avatarSize / 2;
+    // wordPosition现在表示左上角位置，直接使用
+    const avatarX = imageX + (imageSize * wordPosition.x) / 100;
+    const avatarY = imageY + (imageSize * wordPosition.y) / 100;
 
     ctx.save();
+    
+    // 裁剪区域
     ctx.beginPath();
     ctx.rect(avatarX, avatarY, avatarSize, avatarSize);
     ctx.clip();
-    ctx.drawImage(avatarImg, avatarX, avatarY, avatarSize, avatarSize);
+    
+    // 计算图片缩放比例（object-contain效果）
+    const imgWidth = avatarImg.width;
+    const imgHeight = avatarImg.height;
+    const scale = Math.min(avatarSize / imgWidth, avatarSize / imgHeight);
+    const scaledWidth = imgWidth * scale;
+    const scaledHeight = imgHeight * scale;
+    
+    // 居中绘制
+    const offsetX = (avatarSize - scaledWidth) / 2;
+    const offsetY = (avatarSize - scaledHeight) / 2;
+    
+    ctx.drawImage(
+      avatarImg,
+      avatarX + offsetX,
+      avatarY + offsetY,
+      scaledWidth,
+      scaledHeight
+    );
+    
     ctx.restore();
   } catch (error) {
     console.error('Failed to load avatar:', error);

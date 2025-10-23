@@ -9,134 +9,301 @@
       "english": "red",
       "chinese": "红色",
       "phoneticSegments": [
-        { "text": "r", "category": "consonant" },
-        { "text": "e", "category": "short-vowel" },
-        { "text": "d", "category": "consonant" }
+        {
+          "text": "r",
+          "category": "consonant"
+        },
+        {
+          "text": "e",
+          "category": "short-vowel"
+        },
+        {
+          "text": "d",
+          "category": "consonant"
+        }
       ],
       "cardImageUrl": "/cards/colors/red.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 30,
+        "layer": "bottom"
+      }
     },
     {
       "id": "blue",
       "english": "blue",
       "chinese": "蓝色",
       "phoneticSegments": [
-        { "text": "bl", "category": "consonant" },
-        { "text": "ue", "category": "long-vowel" }
+        {
+          "text": "bl",
+          "category": "consonant"
+        },
+        {
+          "text": "ue",
+          "category": "long-vowel"
+        }
       ],
       "cardImageUrl": "/cards/colors/blue.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "yellow",
       "english": "yellow",
       "chinese": "黄色",
       "phoneticSegments": [
-        { "text": "y", "category": "consonant" },
-        { "text": "e", "category": "short-vowel" },
-        { "text": "ll", "category": "consonant" },
-        { "text": "ow", "category": "diphthong" }
+        {
+          "text": "y",
+          "category": "consonant"
+        },
+        {
+          "text": "e",
+          "category": "short-vowel"
+        },
+        {
+          "text": "ll",
+          "category": "consonant"
+        },
+        {
+          "text": "ow",
+          "category": "diphthong"
+        }
       ],
       "cardImageUrl": "/cards/colors/yellow.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "green",
       "english": "green",
       "chinese": "绿色",
       "phoneticSegments": [
-        { "text": "gr", "category": "consonant" },
-        { "text": "ee", "category": "long-vowel" },
-        { "text": "n", "category": "consonant" }
+        {
+          "text": "gr",
+          "category": "consonant"
+        },
+        {
+          "text": "ee",
+          "category": "long-vowel"
+        },
+        {
+          "text": "n",
+          "category": "consonant"
+        }
       ],
       "cardImageUrl": "/cards/colors/green.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "orange",
       "english": "orange",
       "chinese": "橙色",
       "phoneticSegments": [
-        { "text": "or", "category": "r-controlled" },
-        { "text": "a", "category": "short-vowel" },
-        { "text": "n", "category": "consonant" },
-        { "text": "ge", "category": "consonant" }
+        {
+          "text": "or",
+          "category": "r-controlled"
+        },
+        {
+          "text": "a",
+          "category": "short-vowel"
+        },
+        {
+          "text": "n",
+          "category": "consonant"
+        },
+        {
+          "text": "ge",
+          "category": "consonant"
+        }
       ],
       "cardImageUrl": "/cards/colors/orange.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "purple",
       "english": "purple",
       "chinese": "紫色",
       "phoneticSegments": [
-        { "text": "p", "category": "consonant" },
-        { "text": "ur", "category": "r-controlled" },
-        { "text": "p", "category": "consonant" },
-        { "text": "le", "category": "consonant" }
+        {
+          "text": "p",
+          "category": "consonant"
+        },
+        {
+          "text": "ur",
+          "category": "r-controlled"
+        },
+        {
+          "text": "p",
+          "category": "consonant"
+        },
+        {
+          "text": "le",
+          "category": "consonant"
+        }
       ],
       "cardImageUrl": "/cards/colors/purple.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "pink",
       "english": "pink",
       "chinese": "粉色",
       "phoneticSegments": [
-        { "text": "p", "category": "consonant" },
-        { "text": "i", "category": "short-vowel" },
-        { "text": "nk", "category": "digraph" }
+        {
+          "text": "p",
+          "category": "consonant"
+        },
+        {
+          "text": "i",
+          "category": "short-vowel"
+        },
+        {
+          "text": "nk",
+          "category": "digraph"
+        }
       ],
       "cardImageUrl": "/cards/colors/pink.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "black",
       "english": "black",
       "chinese": "黑色",
       "phoneticSegments": [
-        { "text": "bl", "category": "consonant" },
-        { "text": "a", "category": "short-vowel" },
-        { "text": "ck", "category": "digraph" }
+        {
+          "text": "bl",
+          "category": "consonant"
+        },
+        {
+          "text": "a",
+          "category": "short-vowel"
+        },
+        {
+          "text": "ck",
+          "category": "digraph"
+        }
       ],
       "cardImageUrl": "/cards/colors/black.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "white",
       "english": "white",
       "chinese": "白色",
       "phoneticSegments": [
-        { "text": "wh", "category": "digraph" },
-        { "text": "i", "category": "long-vowel" },
-        { "text": "te", "category": "consonant" }
+        {
+          "text": "wh",
+          "category": "digraph"
+        },
+        {
+          "text": "i",
+          "category": "long-vowel"
+        },
+        {
+          "text": "te",
+          "category": "consonant"
+        }
       ],
       "cardImageUrl": "/cards/colors/white.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "brown",
       "english": "brown",
       "chinese": "棕色",
       "phoneticSegments": [
-        { "text": "br", "category": "consonant" },
-        { "text": "ow", "category": "diphthong" },
-        { "text": "n", "category": "consonant" }
+        {
+          "text": "br",
+          "category": "consonant"
+        },
+        {
+          "text": "ow",
+          "category": "diphthong"
+        },
+        {
+          "text": "n",
+          "category": "consonant"
+        }
       ],
       "cardImageUrl": "/cards/colors/brown.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     },
     {
       "id": "gray",
       "english": "gray",
       "chinese": "灰色",
       "phoneticSegments": [
-        { "text": "gr", "category": "consonant" },
-        { "text": "ay", "category": "long-vowel" }
+        {
+          "text": "gr",
+          "category": "consonant"
+        },
+        {
+          "text": "ay",
+          "category": "long-vowel"
+        }
       ],
       "cardImageUrl": "/cards/colors/gray.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 35 }
+      "facePosition": {
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "rotation": 0,
+        "layer": "bottom"
+      }
     }
   ]
 }
-

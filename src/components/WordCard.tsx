@@ -164,14 +164,15 @@ export default function WordCard({
                 top: `${position.y}%`,
                 width: `${word.facePosition.width}%`,
                 aspectRatio: '1',
-                transform: 'translate(-50%, -50%)',
+                transform: `rotate(${rotation}deg)`,
+                transformOrigin: 'center center',
               }}
             >
               <Image
                 src={photoPreview}
                 alt="宝宝"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           )}
@@ -247,14 +248,15 @@ export default function WordCard({
                 top: `${position.y}%`,
                 width: `${word.facePosition.width}%`,
                 aspectRatio: '1',
-                transform: 'translate(-50%, -50%)',
+                transform: `rotate(${rotation}deg)`,
+                transformOrigin: 'center center',
               }}
             >
               <Image
                 src={photoPreview}
                 alt="宝宝"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           )}

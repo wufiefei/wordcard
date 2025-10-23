@@ -13,8 +13,8 @@
         { "text": "pp", "category": "consonant" },
         { "text": "le", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/apple.jpg",
-      "facePosition": { "x": 30, "y": 25, "width": 38 }
+      "cardImageUrl": "/cards/fruits/apple.png",
+      "facePosition": { "x": 6, "y": 23.5, "width": 41, "rotation": -4, "layer": "top" }
     },
     {
       "id": "banana",
@@ -28,8 +28,8 @@
         { "text": "n", "category": "consonant" },
         { "text": "a", "category": "short-vowel" }
       ],
-      "cardImageUrl": "/cards/fruits/banana.jpg",
-      "facePosition": { "x": 35, "y": 30, "width": 32 }
+      "cardImageUrl": "/cards/fruits/banana.png",
+      "facePosition": { "x": 26, "y": 5, "width": 44,  "rotation": 0 }
     },
     {
       "id": "orange",
@@ -41,8 +41,8 @@
         { "text": "n", "category": "consonant" },
         { "text": "ge", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/orange.jpg",
-      "facePosition": { "x": 32, "y": 28, "width": 36 }
+      "cardImageUrl": "/cards/fruits/orange.png",
+      "facePosition": { "x": 28.5, "y": 6, "width": 43, "rotation": 0}
     },
     {
       "id": "grape",
@@ -53,8 +53,8 @@
         { "text": "a", "category": "long-vowel" },
         { "text": "pe", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/grape.jpg",
-      "facePosition": { "x": 34, "y": 26, "width": 34 }
+      "cardImageUrl": "/cards/fruits/grape.png",
+      "facePosition": { "x": 20, "y": 7, "width": 43, "layer": "bottom" }
     },
     {
       "id": "strawberry",
@@ -67,8 +67,8 @@
         { "text": "err", "category": "r-controlled" },
         { "text": "y", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/strawberry.jpg",
-      "facePosition": { "x": 30, "y": 24, "width": 38 }
+      "cardImageUrl": "/cards/fruits/strawberry.png",
+      "facePosition": { "x": 30, "y": 5, "width": 39, "layer": "bottom" }
     },
     {
       "id": "watermelon",
@@ -85,8 +85,8 @@
         { "text": "o", "category": "short-vowel" },
         { "text": "n", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/watermelon.jpg",
-      "facePosition": { "x": 28, "y": 22, "width": 42 }
+      "cardImageUrl": "/cards/fruits/watermelon.png",
+      "facePosition": { "x": 24, "y": 4, "width": 34, "layer": "bottom" }
     },
     {
       "id": "pear",
@@ -96,8 +96,8 @@
         { "text": "p", "category": "consonant" },
         { "text": "ear", "category": "r-controlled" }
       ],
-      "cardImageUrl": "/cards/fruits/pear.jpg",
-      "facePosition": { "x": 33, "y": 27, "width": 35 }
+      "cardImageUrl": "/cards/fruits/pear.png",
+      "facePosition": { "x": 332, "y": 3, "width": 35, "layer": "bottom" }
     },
     {
       "id": "peach",
@@ -108,8 +108,8 @@
         { "text": "ea", "category": "long-vowel" },
         { "text": "ch", "category": "digraph" }
       ],
-      "cardImageUrl": "/cards/fruits/peach.jpg",
-      "facePosition": { "x": 32, "y": 26, "width": 36 }
+      "cardImageUrl": "/cards/fruits/peach.png",
+      "facePosition": { "x": 37, "y": 4, "width": 35, "layer": "bottom" }
     },
     {
       "id": "cherry",
@@ -121,8 +121,8 @@
         { "text": "rr", "category": "consonant" },
         { "text": "y", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/cherry.jpg",
-      "facePosition": { "x": 35, "y": 28, "width": 32 }
+      "cardImageUrl": "/cards/fruits/cherry.png",
+      "facePosition": { "x": 37, "y": 4, "width": 31, "layer": "bottom" }
     },
     {
       "id": "lemon",
@@ -135,8 +135,8 @@
         { "text": "o", "category": "short-vowel" },
         { "text": "n", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/lemon.jpg",
-      "facePosition": { "x": 34, "y": 29, "width": 34 }
+      "cardImageUrl": "/cards/fruits/lemon.png",
+      "facePosition": { "x": 28, "y": 7, "width": 34, "layer": "bottom" }
     },
     {
       "id": "mango",
@@ -148,8 +148,8 @@
         { "text": "ng", "category": "digraph" },
         { "text": "o", "category": "long-vowel" }
       ],
-      "cardImageUrl": "/cards/fruits/mango.jpg",
-      "facePosition": { "x": 31, "y": 25, "width": 37 }
+      "cardImageUrl": "/cards/fruits/mango.png",
+      "facePosition": { "x": 31, "y": 25, "width": 37, "layer": "bottom" }
     },
     {
       "id": "pineapple",
@@ -163,8 +163,8 @@
         { "text": "pp", "category": "consonant" },
         { "text": "le", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/pineapple.jpg",
-      "facePosition": { "x": 29, "y": 23, "width": 40 }
+      "cardImageUrl": "/cards/fruits/pineapple.png",
+      "facePosition": { "x": 29, "y": 23, "width": 40, "layer": "bottom" }
     },
     {
       "id": "kiwi",
@@ -176,8 +176,8 @@
         { "text": "w", "category": "consonant" },
         { "text": "i", "category": "long-vowel" }
       ],
-      "cardImageUrl": "/cards/fruits/kiwi.jpg",
-      "facePosition": { "x": 36, "y": 30, "width": 30 }
+      "cardImageUrl": "/cards/fruits/kiwi.png",
+      "facePosition": { "x": 36, "y": 30, "width": 30, "layer": "bottom" }
     },
     {
       "id": "coconut",
@@ -192,8 +192,8 @@
         { "text": "u", "category": "short-vowel" },
         { "text": "t", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/coconut.jpg",
-      "facePosition": { "x": 30, "y": 26, "width": 38 }
+      "cardImageUrl": "/cards/fruits/coconut.png",
+      "facePosition": { "x": 30, "y": 26, "width": 38, "layer": "bottom" }
     },
     {
       "id": "blueberry",
@@ -206,8 +206,8 @@
         { "text": "err", "category": "r-controlled" },
         { "text": "y", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/blueberry.jpg",
-      "facePosition": { "x": 33, "y": 28, "width": 34 }
+      "cardImageUrl": "/cards/fruits/blueberry.png",
+      "facePosition": { "x": 33, "y": 28, "width": 34, "layer": "bottom" }
     },
     {
       "id": "plum",
@@ -218,8 +218,8 @@
         { "text": "u", "category": "short-vowel" },
         { "text": "m", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/plum.jpg",
-      "facePosition": { "x": 35, "y": 29, "width": 32 }
+      "cardImageUrl": "/cards/fruits/plum.png",
+      "facePosition": { "x": 35, "y": 29, "width": 32, "layer": "bottom" }
     },
     {
       "id": "papaya",
@@ -233,8 +233,8 @@
         { "text": "y", "category": "consonant" },
         { "text": "a", "category": "short-vowel" }
       ],
-      "cardImageUrl": "/cards/fruits/papaya.jpg",
-      "facePosition": { "x": 32, "y": 27, "width": 36 }
+      "cardImageUrl": "/cards/fruits/papaya.png",
+      "facePosition": { "x": 32, "y": 27, "width": 36, "layer": "bottom" }
     },
     {
       "id": "avocado",
@@ -249,8 +249,8 @@
         { "text": "d", "category": "consonant" },
         { "text": "o", "category": "long-vowel" }
       ],
-      "cardImageUrl": "/cards/fruits/avocado.jpg",
-      "facePosition": { "x": 31, "y": 25, "width": 37 }
+      "cardImageUrl": "/cards/fruits/avocado.png",
+      "facePosition": { "x": 31, "y": 25, "width": 37, "layer": "bottom" }
     },
     {
       "id": "pomegranate",
@@ -266,8 +266,8 @@
         { "text": "a", "category": "short-vowel" },
         { "text": "te", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/pomegranate.jpg",
-      "facePosition": { "x": 28, "y": 24, "width": 40 }
+      "cardImageUrl": "/cards/fruits/pomegranate.png",
+      "facePosition": { "x": 28, "y": 24, "width": 40, "layer": "bottom" }
     },
     {
       "id": "dragonfruit",
@@ -283,8 +283,8 @@
         { "text": "ui", "category": "long-vowel" },
         { "text": "t", "category": "consonant" }
       ],
-      "cardImageUrl": "/cards/fruits/dragonfruit.jpg",
-      "facePosition": { "x": 30, "y": 26, "width": 38 }
+      "cardImageUrl": "/cards/fruits/dragonfruit.png",
+      "facePosition": { "x": 30, "y": 26, "width": 38, "layer": "bottom" }
     }
   ]
 }

@@ -12,11 +12,13 @@ interface Step2SelectWordsProps {
   photoPreview: string | null;
   wordPositions: Record<string, { x: number; y: number }>;
   wordSizes?: Record<string, number>;
+  wordRotations?: Record<string, number>;
   onSelectLibrary: (libraryId: string) => void;
   onToggleWord: (wordId: string) => void;
   onToggleAll: () => void;
   onUpdateWordPosition: (wordId: string, x: number, y: number) => void;
   onUpdateWordSize?: (wordId: string, width: number) => void;
+  onUpdateWordRotation?: (wordId: string, rotation: number) => void;
   onSelectTemplate: (template: CardTemplate) => void;
   onNext: () => void;
   onBack: () => void;
@@ -44,11 +46,13 @@ export default function Step2SelectWords({
   photoPreview,
   wordPositions,
   wordSizes,
+  wordRotations,
   onSelectLibrary,
   onToggleWord,
   onToggleAll,
   onUpdateWordPosition,
   onUpdateWordSize,
+  onUpdateWordRotation,
   onSelectTemplate,
   onNext,
   onBack,
@@ -178,13 +182,13 @@ export default function Step2SelectWords({
                         isSelected ? 'border-pink-400' : 'border-transparent'
                       }`}
                     >
-                      {/* 选择框 */}
+                      {/* 选择框 - 提高z-index防止被头像遮挡 */}
                       <div
                         onClick={() => onToggleWord(word.id)}
-                        className="absolute top-2 left-2 z-10"
+                        className="absolute top-2 left-2 z-20"
                       >
                         <div
-                          className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                          className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all shadow-lg ${
                             isSelected
                               ? 'bg-pink-500 border-pink-500'
                               : 'bg-white border-gray-300'
@@ -211,47 +215,59 @@ export default function Step2SelectWords({
                         onClick={() => setPreviewWord(word)}
                         className="aspect-square bg-gradient-to-br from-yellow-100 to-pink-100 flex items-center justify-center relative overflow-hidden"
                       >
-                        {/* 背景图片 */}
+                        {/* 背景图片和头像 - 头像始终在上层 */}
                         {(() => {
-                          const imageUrl = getCardImageUrl(word, selectedTemplate);
-                          if (imageUrl) {
-                            return (
-                              <Image
-                                src={imageUrl}
-                                alt={word.english}
-                                fill
-                                className="object-cover"
-                                onError={(e) => {
-                                  // 图片加载失败时显示默认图标
-                                  (e.target as HTMLImageElement).style.display = 'none';
-                                }}
-                              />
-                            );
-                          }
-                          return <div className="text-4xl">🎨</div>;
-                        })()}
-                        
-                        {/* 小头像示意 - 使用原始尺寸 */}
-                        {photoPreview && (() => {
-                          const position = wordPositions[word.id] || { x: word.facePosition.x, y: word.facePosition.y };
                           return (
-                            <div 
-                              className="absolute overflow-hidden z-10"
-                              style={{
-                                left: `${position.x}%`,
-                                top: `${position.y}%`,
-                                width: `${word.facePosition.width}%`,
-                                aspectRatio: '1',
-                                transform: 'translate(-50%, -50%)',
-                              }}
-                            >
-                              <Image
-                                src={photoPreview}
-                                alt="宝宝"
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
+                            <>
+                              {/* 背景图片 */}
+                              {(() => {
+                                const imageUrl = getCardImageUrl(word, selectedTemplate);
+                                if (imageUrl) {
+                                  return (
+                                    <div className="absolute inset-0" style={{ zIndex: 0 }}>
+                                      <Image
+                                        src={imageUrl}
+                                        alt={word.english}
+                                        fill
+                                        className="object-cover"
+                                        onError={(e) => {
+                                          (e.target as HTMLImageElement).style.display = 'none';
+                                        }}
+                                      />
+                                    </div>
+                                  );
+                                }
+                                return <div className="text-4xl" style={{ zIndex: 0 }}>🎨</div>;
+                              })()}
+                              
+                              {/* 真实头像预览 - 按实际效果显示 */}
+                              {photoPreview && (() => {
+                                const position = wordPositions[word.id] || { x: word.facePosition.x, y: word.facePosition.y };
+                                const rotation = wordRotations?.[word.id] ?? (word.facePosition.rotation || 0);
+                                
+                                return (
+                                  <div 
+                                    className="absolute overflow-hidden"
+                                    style={{
+                                      left: `${position.x}%`,
+                                      top: `${position.y}%`,
+                                      width: `${word.facePosition.width}%`,
+                                      aspectRatio: '1',
+                                      transform: `rotate(${rotation}deg)`,
+                                      transformOrigin: 'center center',
+                                      zIndex: 10, // 头像始终在上层
+                                    }}
+                                  >
+                                    <Image
+                                      src={photoPreview}
+                                      alt="宝宝"
+                                      fill
+                                      className="object-contain"
+                                    />
+                                  </div>
+                                );
+                              })()}
+                            </>
                           );
                         })()}
                       </div>
@@ -337,6 +353,9 @@ export default function Step2SelectWords({
           }}
           onSizeChange={(width) => {
             onUpdateWordSize?.(previewWord.id, width);
+          }}
+          onRotationChange={(rotation) => {
+            onUpdateWordRotation?.(previewWord.id, rotation);
           }}
         />
       )}
