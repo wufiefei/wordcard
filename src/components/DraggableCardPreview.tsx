@@ -102,39 +102,71 @@ export default function DraggableCardPreview({
         onPositionChange(clampedX, clampedY);
       }
     } else if (isRotating && rotateStartRef.current) {
-      // 旋转头像 - 直接使用鼠标和头像中心的连线角度
-      const { avatarCenter } = rotateStartRef.current;
+      // 旋转头像 - 使用角度差，避免突然跳转
+      const { initialRotation, avatarCenter } = rotateStartRef.current;
       
-      // 计算当前鼠标位置相对于头像中心的角度（以水平向右为0度，顺时针为正）
-      const angleRad = Math.atan2(e.clientY - avatarCenter.y, e.clientX - avatarCenter.x);
-      const angleDeg = angleRad * (180 / Math.PI);
+      // 计算初始鼠标位置相对于头像中心的角度
+      const initialAngle = Math.atan2(
+        rotateStartRef.current.y - avatarCenter.y,
+        rotateStartRef.current.x - avatarCenter.x
+      ) * (180 / Math.PI);
+      
+      // 计算当前鼠标位置相对于头像中心的角度
+      const currentAngle = Math.atan2(
+        e.clientY - avatarCenter.y,
+        e.clientX - avatarCenter.x
+      ) * (180 / Math.PI);
+      
+      // 计算角度差
+      let angleDiff = currentAngle - initialAngle;
+      
+      // 处理角度跨越180度/-180度边界的情况
+      if (angleDiff > 180) angleDiff -= 360;
+      if (angleDiff < -180) angleDiff += 360;
+      
+      // 应用角度差到初始旋转角度
+      const newRotation = initialRotation + angleDiff;
       
       // 将角度标准化到0-360度范围
-      const normalizedRotation = ((angleDeg % 360) + 360) % 360;
+      const normalizedRotation = ((newRotation % 360) + 360) % 360;
       
       setAvatarRotation(normalizedRotation);
     } else if (isResizing && resizeStartRef.current) {
-      // 缩放大小 - 优化算法，使其更跟随鼠标
-      const corner = resizeStartRef.current.corner;
+      // 缩放大小 - 基于鼠标移动距离计算
       const initialPos = resizeStartRef.current.initialPosition;
+      const initialWidth = resizeStartRef.current.initialWidth;
       
-      // 计算鼠标相对于卡片中心的距离
-      const mouseXPercent = ((e.clientX - rect.left) / rect.width) * 100;
-      const mouseYPercent = ((e.clientY - rect.top) / rect.height) * 100;
+      // 计算鼠标移动的距离（像素）
+      const deltaX = e.clientX - resizeStartRef.current.x;
+      const deltaY = e.clientY - resizeStartRef.current.y;
       
-      // 计算从中心到鼠标的距离
-      const distX = Math.abs(mouseXPercent - initialPos.x);
-      const distY = Math.abs(mouseYPercent - initialPos.y);
-      const dist = Math.max(distX, distY) * 2; // *2 因为width是从中心到边缘的距离
+      // 根据移动距离计算新的宽度（转换为百分比）
+      // 使用勾股定理计算对角线距离
+      const delta = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      const deltaPercent = (delta / rect.width) * 100;
       
-      // 限制大小范围，并确保不超出边界
-      let newWidth = Math.max(10, Math.min(80, dist));
+      // 根据拖动方向确定是增大还是缩小
+      const corner = resizeStartRef.current.corner;
+      let direction = 1; // 默认增大
       
-      // 确保头像不会超出卡片边界
-      const maxWidthX = Math.min(initialPos.x * 2, (100 - initialPos.x) * 2);
-      const maxWidthY = Math.min(initialPos.y * 2, (100 - initialPos.y) * 2);
-      const maxWidth = Math.min(maxWidthX, maxWidthY);
-      newWidth = Math.min(newWidth, maxWidth);
+      // 根据角落位置和鼠标移动方向判断
+      if ((corner === 'br' && (deltaX < 0 || deltaY < 0)) ||
+          (corner === 'bl' && (deltaX > 0 || deltaY < 0)) ||
+          (corner === 'tr' && (deltaX < 0 || deltaY > 0)) ||
+          (corner === 'tl' && (deltaX > 0 || deltaY > 0))) {
+        direction = -1; // 缩小
+      }
+      
+      let newWidth = initialWidth + (deltaPercent * direction * 0.5);
+      
+      // 限制大小范围
+      newWidth = Math.max(10, Math.min(80, newWidth));
+      
+      // 确保头像不会超出卡片边界（position是左上角）
+      const maxWidthFromLeft = 100 - initialPos.x;
+      const maxWidthFromTop = 100 - initialPos.y;
+      const maxWidthFromEdge = Math.min(maxWidthFromLeft, maxWidthFromTop);
+      newWidth = Math.min(newWidth, maxWidthFromEdge);
       
       setAvatarWidth(newWidth);
       if (onSizeChange) {

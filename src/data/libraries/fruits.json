@@ -54,7 +54,7 @@
         { "text": "pe", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/grape.png",
-      "facePosition": { "x": 20, "y": 7, "width": 43, "layer": "bottom" }
+      "facePosition": { "x": 15, "y": 10, "width": 50, "layer": "bottom" }
     },
     {
       "id": "strawberry",
@@ -68,7 +68,7 @@
         { "text": "y", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/strawberry.png",
-      "facePosition": { "x": 30, "y": 5, "width": 39, "layer": "bottom" }
+      "facePosition": { "x": 25, "y": 7, "width": 46, "layer": "bottom" }
     },
     {
       "id": "watermelon",
@@ -86,7 +86,7 @@
         { "text": "n", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/watermelon.png",
-      "facePosition": { "x": 24, "y": 4, "width": 34, "layer": "bottom" }
+      "facePosition": { "x": 20, "y": 3, "width": 46, "layer": "bottom" }
     },
     {
       "id": "pear",
@@ -97,7 +97,7 @@
         { "text": "ear", "category": "r-controlled" }
       ],
       "cardImageUrl": "/cards/fruits/pear.png",
-      "facePosition": { "x": 332, "y": 3, "width": 35, "layer": "bottom" }
+      "facePosition": { "x": 25, "y": 3, "width": 46, "layer": "bottom" }
     },
     {
       "id": "peach",
@@ -109,7 +109,7 @@
         { "text": "ch", "category": "digraph" }
       ],
       "cardImageUrl": "/cards/fruits/peach.png",
-      "facePosition": { "x": 37, "y": 4, "width": 35, "layer": "bottom" }
+      "facePosition": { "x": 30, "y": 4, "width": 47, "layer": "bottom" }
     },
     {
       "id": "cherry",
@@ -122,7 +122,7 @@
         { "text": "y", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/cherry.png",
-      "facePosition": { "x": 37, "y": 4, "width": 31, "layer": "bottom" }
+      "facePosition": { "x": 30, "y": 2, "width": 43.5, "layer": "bottom" }
     },
     {
       "id": "lemon",
@@ -136,7 +136,7 @@
         { "text": "n", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/lemon.png",
-      "facePosition": { "x": 28, "y": 7, "width": 34, "layer": "bottom" }
+      "facePosition": { "x": 20, "y": 7, "width": 46, "layer": "bottom" }
     },
     {
       "id": "mango",
@@ -149,7 +149,7 @@
         { "text": "o", "category": "long-vowel" }
       ],
       "cardImageUrl": "/cards/fruits/mango.png",
-      "facePosition": { "x": 31, "y": 25, "width": 37, "layer": "bottom" }
+      "facePosition": { "x": 28, "y": 5.5, "width": 43.5, "layer": "bottom" }
     },
     {
       "id": "pineapple",
@@ -164,7 +164,7 @@
         { "text": "le", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/pineapple.png",
-      "facePosition": { "x": 29, "y": 23, "width": 40, "layer": "bottom" }
+      "facePosition": { "x": 32, "y": 4, "width": 46, "layer": "bottom" }
     },
     {
       "id": "kiwi",
@@ -177,7 +177,7 @@
         { "text": "i", "category": "long-vowel" }
       ],
       "cardImageUrl": "/cards/fruits/kiwi.png",
-      "facePosition": { "x": 36, "y": 30, "width": 30, "layer": "bottom" }
+      "facePosition": { "x": 35.5, "y": 11, "width": 42.5, "layer": "bottom" }
     },
     {
       "id": "coconut",
@@ -193,7 +193,7 @@
         { "text": "t", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/coconut.png",
-      "facePosition": { "x": 30, "y": 26, "width": 38, "layer": "bottom" }
+      "facePosition": { "x": 28, "y": 7, "width": 46, "layer": "bottom" }
     },
     {
       "id": "blueberry",
@@ -207,7 +207,7 @@
         { "text": "y", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/blueberry.png",
-      "facePosition": { "x": 33, "y": 28, "width": 34, "layer": "bottom" }
+      "facePosition": { "x": 25, "y": 4, "width": 46, "layer": "bottom" }
     },
     {
       "id": "plum",
@@ -219,7 +219,7 @@
         { "text": "m", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/plum.png",
-      "facePosition": { "x": 35, "y": 29, "width": 32, "layer": "bottom" }
+      "facePosition": { "x": 29.5, "y": 11.5, "width": 41, "layer": "bottom" }
     },
     {
       "id": "papaya",
@@ -234,7 +234,7 @@
         { "text": "a", "category": "short-vowel" }
       ],
       "cardImageUrl": "/cards/fruits/papaya.png",
-      "facePosition": { "x": 32, "y": 27, "width": 36, "layer": "bottom" }
+      "facePosition": { "x": 27, "y": 2, "width": 46, "layer": "bottom" }
     },
     {
       "id": "avocado",
@@ -250,7 +250,7 @@
         { "text": "o", "category": "long-vowel" }
       ],
       "cardImageUrl": "/cards/fruits/avocado.png",
-      "facePosition": { "x": 31, "y": 25, "width": 37, "layer": "bottom" }
+      "facePosition": { "x": 26, "y": 3, "width": 46, "layer": "bottom" }
     },
     {
       "id": "pomegranate",
@@ -267,7 +267,7 @@
         { "text": "te", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/pomegranate.png",
-      "facePosition": { "x": 28, "y": 24, "width": 40, "layer": "bottom" }
+      "facePosition": { "x": 34, "y": 3, "width": 46, "layer": "bottom" }
     },
     {
       "id": "dragonfruit",
@@ -284,7 +284,7 @@
         { "text": "t", "category": "consonant" }
       ],
       "cardImageUrl": "/cards/fruits/dragonfruit.png",
-      "facePosition": { "x": 30, "y": 26, "width": 38, "layer": "bottom" }
+      "facePosition": { "x": 32, "y": 9, "width": 44, "layer": "bottom" }
     }
   ]
 }

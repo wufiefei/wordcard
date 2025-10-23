@@ -12,6 +12,7 @@ interface Step3SelectSizeProps {
   selectedLibraryId: string | null;
   photoPreview: string | null;
   wordPositions: Record<string, { x: number; y: number }>;
+  wordRotations?: Record<string, number>;
   selectedTemplate: CardTemplate;
   onSelectSize: (sizeId: string) => void;
   onBack: () => void;
@@ -27,6 +28,7 @@ export default function Step3SelectSize({
   selectedLibraryId,
   photoPreview,
   wordPositions,
+  wordRotations,
   selectedTemplate,
   onSelectSize,
   onBack,
@@ -222,6 +224,7 @@ export default function Step3SelectSize({
                                 photoPreview={photoPreview}
                                 selectedTemplate={selectedTemplate}
                                 wordPosition={wordPositions[word.id]}
+                                wordRotation={wordRotations?.[word.id]}
                                 cardSize={currentSizeConfig}
                               />
                             ) : (

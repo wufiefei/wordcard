@@ -197,6 +197,7 @@ export default function Home() {
               selectedLibraryId={selectedLibraryId}
               photoPreview={photoPreview}
               wordPositions={wordPositions}
+              wordRotations={wordRotations}
               selectedTemplate={selectedTemplate}
               onSelectSize={setSelectedCardSize}
               onBack={() => setCurrentStep(2)}
