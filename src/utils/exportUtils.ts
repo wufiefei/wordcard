@@ -79,7 +79,7 @@ export async function renderCardToCanvas(
 }
 
 // 获取卡片布局配置
-function getCardLayout(sizeId: string) {
+function getCardLayout(sizeId: string): CardLayout {
   switch (sizeId) {
     case 'extra-large':
       return {
@@ -145,6 +145,17 @@ function getCardLayout(sizeId: string) {
   }
 }
 
+// 布局配置类型
+interface CardLayout {
+  imageRatio: number;
+  paddingRatio: number;
+  imageGapRatio: number;
+  textGapRatio: number;
+  englishSizeRatio: number;
+  chineseSizeRatio: number;
+  direction: 'horizontal' | 'vertical';
+}
+
 // 渲染横向布局卡片
 async function renderHorizontalCard(
   ctx: CanvasRenderingContext2D,
@@ -155,8 +166,7 @@ async function renderHorizontalCard(
   selectedTemplate: CardTemplate,
   canvasWidth: number,
   canvasHeight: number,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  layout: any,
+  layout: CardLayout,
   paddingPx: number
 ) {
   const imageSize = canvasHeight * layout.imageRatio;
@@ -191,8 +201,7 @@ async function renderVerticalCard(
   selectedTemplate: CardTemplate,
   canvasWidth: number,
   canvasHeight: number,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  layout: any,
+  layout: CardLayout,
   paddingPx: number
 ) {
   const imageSize = canvasWidth * layout.imageRatio;
@@ -297,8 +306,8 @@ async function drawAvatar(
     );
     
     ctx.restore();
-  } catch (error) {
-    console.error('Failed to load avatar:', error);
+  } catch (err) {
+    console.error('Failed to load avatar:', err);
   }
 }
 
