@@ -146,7 +146,7 @@ function getCardLayout(sizeId: string): CardLayout {
 }
 
 // 布局配置类型
-interface CardLayout {
+interface CardLayout { 
   imageRatio: number;
   paddingRatio: number;
   imageGapRatio: number;

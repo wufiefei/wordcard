@@ -159,7 +159,7 @@
         { "text": "p", "category": "consonant" },
         { "text": "i", "category": "long-vowel" },
         { "text": "ne", "category": "consonant" },
-        { "text": "a", "category": "short-vowel" },
+        { "text": "aa", "category": "short-vowel" },
         { "text": "pp", "category": "consonant" },
         { "text": "le", "category": "consonant" }
       ],
