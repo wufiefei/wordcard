@@ -6,7 +6,9 @@
 import { Word, CardSizeType, CardTemplate } from '@/types/wordcard';
 
 // 动态导入库（客户端专用）
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let jsPDF: any = null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let JSZip: any = null;
 
 async function loadLibraries() {
@@ -153,6 +155,7 @@ async function renderHorizontalCard(
   selectedTemplate: CardTemplate,
   canvasWidth: number,
   canvasHeight: number,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   layout: any,
   paddingPx: number
 ) {
@@ -188,6 +191,7 @@ async function renderVerticalCard(
   selectedTemplate: CardTemplate,
   canvasWidth: number,
   canvasHeight: number,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   layout: any,
   paddingPx: number
 ) {
@@ -208,7 +212,6 @@ async function renderVerticalCard(
   // 绘制文字
   const textX = canvasWidth / 2;
   const textY = imageY + imageSize + imageGap;
-  const textHeight = canvasHeight - textY - paddingPx;
 
   drawText(ctx, word, textX, textY, canvasWidth - paddingPx * 2, canvasWidth * layout.englishSizeRatio, canvasWidth * layout.chineseSizeRatio, layout.textGapRatio * canvasWidth);
 }
@@ -239,7 +242,7 @@ async function drawBackgroundImage(
   try {
     const img = await loadImage(imageUrl);
     ctx.drawImage(img, x, y, width, height);
-  } catch (error) {
+  } catch {
     // 如果加载失败，绘制渐变背景
     const gradient = ctx.createLinearGradient(x, y, x + width, y + height);
     gradient.addColorStop(0, '#FEF3C7');

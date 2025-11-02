@@ -8,6 +8,7 @@ interface WordCardProps {
   photoPreview: string | null;
   selectedTemplate: CardTemplate;
   wordPosition?: { x: number; y: number };
+  wordRotation?: number;
   cardSize: CardSizeType;
 }
 
@@ -112,9 +113,11 @@ export default function WordCard({
   photoPreview,
   selectedTemplate,
   wordPosition,
+  wordRotation,
   cardSize,
 }: WordCardProps) {
   const position = wordPosition || { x: word.facePosition.x, y: word.facePosition.y };
+  const rotation = wordRotation ?? word.facePosition.rotation ?? 0;
   const imageUrl = getCardImageUrl(word, selectedTemplate);
   const layout = getCardLayout(cardSize.id);
 
@@ -164,7 +167,7 @@ export default function WordCard({
                 top: `${position.y}%`,
                 width: `${word.facePosition.width}%`,
                 aspectRatio: '1',
-                transform: 'translate(-50%, -50%)',
+                transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
               }}
             >
               <Image
@@ -247,7 +250,7 @@ export default function WordCard({
                 top: `${position.y}%`,
                 width: `${word.facePosition.width}%`,
                 aspectRatio: '1',
-                transform: 'translate(-50%, -50%)',
+                transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
               }}
             >
               <Image

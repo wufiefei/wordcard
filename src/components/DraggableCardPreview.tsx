@@ -52,7 +52,6 @@ export default function DraggableCardPreview({
   const [isResizing, setIsResizing] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
   const [showCorners, setShowCorners] = useState(false);
-  const [activeCorner, setActiveCorner] = useState<'tl' | 'tr' | 'bl' | 'br' | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const resizeStartRef = useRef<{ 
     x: number; 
@@ -179,7 +178,6 @@ export default function DraggableCardPreview({
     setIsDragging(false);
     setIsResizing(false);
     setIsRotating(false);
-    setActiveCorner(null);
     resizeStartRef.current = null;
     rotateStartRef.current = null;
   };
@@ -195,7 +193,6 @@ export default function DraggableCardPreview({
     e.preventDefault();
     e.stopPropagation();
     setIsResizing(true);
-    setActiveCorner(corner);
     resizeStartRef.current = {
       x: e.clientX,
       y: e.clientY,
