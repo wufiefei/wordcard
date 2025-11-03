@@ -125,10 +125,7 @@ export default function Step1PhotoUpload({
             <div className="mb-4 bg-blue-50 border border-blue-200 rounded-lg p-3">
               <p className="text-xs text-blue-800 leading-relaxed">
                 💡 <strong>照片要求：</strong>请上传宝宝正面清晰照（露出完整五官，无遮挡），背景简洁，光线充足，避免模糊、过暗或过亮
-              </p>
-              <p className="text-xs text-green-700 mt-1">
-                ⚡ <strong>智能优化：</strong>自动裁剪空白区域，内容居中，处理速度快
-              </p>
+              </p>              
             </div>
 
             <div
