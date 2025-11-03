@@ -251,7 +251,7 @@ export default function Step1PhotoUpload({
                 <div className="text-center text-gray-400">
                   <div className="text-6xl mb-4 animate-pulse">🎨</div>
                   <p>AI智能抠图中...</p>
-                  <p className="text-xs mt-2">请稍候，首次使用需要加载模型</p>
+                  <p className="text-xs mt-2">请稍候，首次使用需要加载</p>
                 </div>
               </div>
             ) : (

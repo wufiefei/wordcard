@@ -1,0 +1,11 @@
+# rembg 抠图服务依赖
+
+# 核心库
+rembg[gpu]==2.0.50  # GPU版本，速度更快。如果没有GPU，使用 rembg==2.0.50
+flask==3.0.0
+flask-cors==4.0.0
+pillow==10.1.0
+
+# 生产环境
+gunicorn==21.2.0  # WSGI服务器
+
