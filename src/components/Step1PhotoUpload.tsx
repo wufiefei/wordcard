@@ -126,6 +126,9 @@ export default function Step1PhotoUpload({
               <p className="text-xs text-blue-800 leading-relaxed">
                 💡 <strong>照片要求：</strong>请上传宝宝正面清晰照（露出完整五官，无遮挡），背景简洁，光线充足，避免模糊、过暗或过亮
               </p>
+              <p className="text-xs text-green-700 mt-1">
+                ⚡ <strong>智能优化：</strong>自动裁剪空白区域，内容居中，处理速度快
+              </p>
             </div>
 
             <div
@@ -194,7 +197,7 @@ export default function Step1PhotoUpload({
             {photoPreview && !isProcessing && (
               <div className="mt-4">
                 <div className="bg-green-50 rounded-lg p-3 text-sm text-gray-600">
-                  <p className="font-medium text-green-700 mb-1">✅ 自动抠图完成</p>
+                  <p className="font-medium text-green-700 mb-1">✅ 智能抠图完成（已居中）</p>
                   <ul className="space-y-1 text-xs">
                     <li>• 如不满意可点击编辑</li>
                     <li>• 使用擦除/还原优化</li>
