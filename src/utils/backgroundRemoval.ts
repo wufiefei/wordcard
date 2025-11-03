@@ -157,7 +157,7 @@ export async function removeBackground(
     
     // 3. 执行背景移除（使用快速模式配置）
     const blob = await removeBg(imageUrl, {
-      model: 'small', // 使用小模型，速度更快
+      model: 'isnet_quint8', // 使用量化模型，速度更快
       progress: (key, current, total) => {
         const progress = Math.round((current / total) * 100);
         // 进度映射: 10% -> 85%
